@@ -1,0 +1,71 @@
+/*-----------------------------------*\
+  #btn.css
+\*-----------------------------------*/
+
+:root {
+
+  /**
+   * colors
+   */
+
+  /* gradient */
+
+  --bg-gradient-onyx: linear-gradient(to bottom right,
+      hsl(240, 1%, 25%) 3%,
+      hsl(0, 0%, 19%) 97%);
+  --bg-gradient-jet: linear-gradient(to bottom right,
+      hsla(240, 1%, 18%, 0.251) 0%,
+      hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
+  --bg-gradient-yellow-1: linear-gradient(to bottom right,
+      hsl(45, 100%, 71%) 0%,
+      hsla(36, 100%, 69%, 0) 50%);
+  --bg-gradient-yellow-2: linear-gradient(135deg,
+      hsla(45, 100%, 71%, 0.251) 0%,
+      hsla(35, 100%, 68%, 0) 59.86%), hsl(240, 2%, 13%);
+  --border-gradient-onyx: linear-gradient(to bottom right,
+      hsl(0, 0%, 25%) 0%,
+      hsla(0, 0%, 25%, 0) 50%);
+  --text-gradient-yellow: linear-gradient(to right,
+      hsl(45, 100%, 72%),
+      hsl(35, 100%, 68%));
+}
+
+
+
+
+.btn {
+  background-color: var(--text-gradient-yellow);
+  font-size: var(--fs-14);
+  font-weight: var(--fw-500);
+  text-transform: uppercase;
+  max-width: max-content;
+  letter-spacing: 2px;
+  padding: 10px 22px;
+  box-shadow: 6px 6px 0 -1px var(--shadow-color, var(--jet));
+  transition: var(--transition-1);
+}
+
+.btn:is(:hover, :focus-visible) {
+  background-color: var(--hover-bg, var(--jet));
+  box-shadow: 5px 5px 0 -2px var(--hover-shadow-color, var(--orange-red));
+}
+
+.btn-primary,
+.btn-secondary { color: var(--white); }
+
+.btn-secondary {
+  background-color: var(--jet);
+  --shadow-color: var(--orange-red);
+  --hover-bg: var(--orange-red);
+  --hover-shadow-color: var(--jet);
+}
+
+.btn-tertiary {
+  color: var(--jet);
+  background-color: var(--maximum-yellow-red);
+  --shadow-color: var(--orange-red);
+  --hover-bg: var(--orange-red);
+  --hover-shadow-color: var(--maximum-yellow-red);
+}
+
+.btn-tertiary:is(:hover, :focus-visible) { color: var(--white); }

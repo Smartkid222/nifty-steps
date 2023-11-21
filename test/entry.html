@@ -217,11 +217,9 @@
                                 <h4 class="h4 service-item-title">Teacher's Comment</h4>
 
                                 <p class="service-item-text">
-                                    Proficient in HTML, CSS, and JavaScript. Experienced in responsive web design,
-                                    building user-friendly interfaces, and
-                                    using modern frameworks like ReactJS.
+                                    click below to comment on student's results
                                 </p>
-                                <a href="../home.html" class="btn btn-primary">Back to Home</a>
+                                <a href="comment.html" class="btn btn-primary">Comment</a>
                             </div>
 
                         </li>
@@ -236,11 +234,9 @@
                                 <h4 class="h4 service-item-title">Behavior Rating</h4>
 
                                 <p class="service-item-text">
-                                    I'm improving my knowledge in server-side programming using technologies like
-                                    Node.js and Express.
-                                    and learning working with databases such as MongoDB and MySQL.
+                                    Enter Student's Behavior Rating.
                                 </p>
-                                <a href="../home.html" class="btn btn-primary">Back to Home</a>
+                                <a href="../home.html" class="btn btn-primary">Rating</a>
                             </div>
 
                         </li>
@@ -255,11 +251,39 @@
                                 <h4 class="h4 service-item-title">Term / Academic Session</h4>
 
                                 <p class="service-item-text">
-                                    Creates graphics primarily for published, printed, or electronic media, such as
-                                    brochures and
-                                    advertising.
+                                    Has been entered already (Don't Bother)
                                 </p>
-                                <a href="../home.html" class="btn btn-primary">Back to Home</a>
+                                <section class="sec btn">
+                                    <button class="show-modall">Term & Session</button>
+                                    <span class="overlayy"></span>
+                                
+                                    <div class="modal-boxx">
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        <h2>Term / Session</h2>
+                                        <h3>Has been entered already (Don't Bother).</h3>
+                                
+                                        <div class="btn">
+                                            <button class="close-btnn">Ok, Close</button>
+                                        </div>
+                                    </div>
+                                </section>
+                                
+                                <script>
+                                    const section = document.querySelector(".sec"),
+                                        overlay = document.querySelector(".overlayy"),
+                                        showBtn = document.querySelector(".show-modall"),
+                                        closeBtn = document.querySelector(".close-btnn");
+
+                                    showBtn.addEventListener("click", () => section.classList.add("active"));
+
+                                    overlay.addEventListener("click", () =>
+                                        section.classList.remove("active")
+                                    );
+
+                                    closeBtn.addEventListener("click", () =>
+                                        section.classList.remove("active")
+                                    );
+                                </script>
                             </div>
 
                         </li>
@@ -274,9 +298,39 @@
                                 <h4 class="h4 service-item-title">Check Results</h4>
 
                                 <p class="service-item-text">
-                                    I make high-quality photos of any category at a professional level.
+                                    Check Student's Results.
                                 </p>
-                                <a href="../home.html" class="btn btn-primary">Back to Home</a>
+
+                                <section class="secc btn">
+                                    <button class="showw-modall">Results</button>
+                                    <span class="ooverlayy"></span>
+                                
+                                    <div class="modall-boxx">
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        <h2>Result Checking</h2>
+                                        <h3>This will be uploaded soon.</h3>
+                                
+                                        <div class="btn">
+                                            <button class="closee-btnn">Ok, Close</button>
+                                        </div>
+                                    </div>
+                                </section>
+                                <script>
+                                    const section1 = document.querySelector(".secc"),
+                                        overlay1 = document.querySelector(".ooverlayy"),
+                                        showBtn1 = document.querySelector(".showw-modall"),
+                                        closeBtn1 = document.querySelector(".closee-btnn");
+
+                                    showBtn1.addEventListener("click", () => section1.classList.add("active"));
+
+                                    overlay1.addEventListener("click", () =>
+                                        section1.classList.remove("active")
+                                    );
+
+                                    closeBtn1.addEventListener("click", () =>
+                                        section1.classList.remove("active")
+                                    );
+                                </script>
                             </div>
 
                         </li>
@@ -309,30 +363,9 @@
                                 <h4 class="h4 service-item-title">Principal's Comment</h4>
                 
                                 <p class="service-item-text">
-                                    Proficient in HTML, CSS, and JavaScript. Experienced in responsive web design,
-                                    building user-friendly interfaces, and
-                                    using modern frameworks like ReactJS.
+                                    Principal comment only
                                 </p>
-                                <a href="../home.html" class="btn btn-primary">Back to Home</a>
-                            </div>
-                
-                        </li>
-                
-                        <li class="service-item">
-                
-                            <div class="service-icon-box">
-                                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
-                            </div>
-                
-                            <div class="service-content-box">
-                                <h4 class="h4 service-item-title">Session Resumes</h4>
-                
-                                <p class="service-item-text">
-                                    I'm improving my knowledge in server-side programming using technologies like
-                                    Node.js and Express.
-                                    and learning working with databases such as MongoDB and MySQL.
-                                </p>
-                                <a href="../home.html" class="btn btn-primary">Back to Home</a>
+                                <a href="../home.html" class="btn btn-primary">P.Comment</a>
                             </div>
                 
                         </li>
@@ -622,7 +655,7 @@
                         </li>
 
                         <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=538555380" class="card card-sm" style="background-color: hsl(245, 48%, 9%)">
+                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=538555380" class="card card-sm" style="background-color: hsl(245, 75%, 78%)">
                         
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
@@ -634,7 +667,7 @@
                         </li>
 
                         <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=336119529" class="card card-sm" style="background-color: hsl(0, 42%, 9%)">
+                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=336119529" class="card card-sm" style="background-color: hsl(0, 57%, 76%)">
                         
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
@@ -670,7 +703,7 @@
                     <ul class="skill-list">
                 
                         <li>
-                            <a href="./games/scramble/index.html" class="card card-sm" style="background-color: hsl(226, 91%, 9%)">
+                            <a href="https://docs.google.com/spreadsheets/d/1KJvEsjmKpC50OaUwb6EAEpz3K2dzyZwqZuhbVVJ2uQQ/edit#gid=644666075" class="card card-sm" style="background-color: hsl(226, 34%, 65%)">
                 
                                 <div class="card-media">
                                     <i class="fa fa-scribd" aria-hidden="true"></i>
@@ -682,7 +715,7 @@
                         </li>
                 
                         <li>
-                            <a href="./games/arrow/index.html" class="card card-sm" style="background-color: hsl(0, 0%, 97%)">
+                            <a href="" class="card card-sm" style="background-color: hsl(0, 0%, 97%)">
                 
                                 <div class="card-media">
                                     <i class="fa fa-bar-chart" aria-hidden="true"></i>
@@ -1032,7 +1065,7 @@
                         </li>
                 
                         <li>
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(244, 41%, 7%)">
+                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 41%, 76%)">
                 
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
@@ -1528,471 +1561,474 @@
 
             </article>
 
-            <!--
-                    - #CONTACT
-                  -->
-            
             <article class="contact" data-page="sss 2">
             
                 <header>
                     <h2 class="h2 article-title">SSS2</h2>
                 </header>
+
+                <div class="modal" data-modal>
+                
+                    <div class="modal-close-overlay" data-modal-overlay></div>
+                
+                    <div class="modal-content">
+                
+                        <button class="modal-close-btn" data-modal-close>
+                            <ion-icon name="close-outline"></ion-icon>
+                        </button>
+                
+                        <div class="newsletter-img">
+                            <img src="./assets/images/bk1.jpeg" alt="subscribe newsletter" width="400" height="400">
+                        </div>
+                
+                        <div class="newsletter">
+                
+                            <form action="#">
+                
+                                <div class="newsletter-header">
+                
+                                    <h3 class="newsletter-title">Note.</h3>
+                
+                                    <p class="newsletter-desc">
+                                        Pls Note That The Department are separated by colours. starting with science, followed by Art and then Commerce
+                                    </p>
+                
+                                </div>
+                
+                            </form>
+                
+                        </div>
+                
+                    </div>
+                
+                </div>
+
             
             
             
                 <section class="projects">
-                
+            
                     <ul class="filter-list">
-                
+            
                         <li class="filter-item">
                             <button data-filter-btn>Science</button>
                         </li>
-                
+            
                         <li class="filter-item">
                             <button data-filter-btn>Art</button>
                         </li>
-                
+            
                         <li class="filter-item">
                             <button data-filter-btn>Commerce</button>
                         </li>
-                
+            
                     </ul>
-                
-                    <div class="filter-select-box">
-                
-                        <button class="filter-select" data-select>
-                
-                            <div class="select-value" data-selecct-value>Select category</div>
-                
-                            <div class="select-icon">
-                                <ion-icon name="chevron-down"></ion-icon>
-                            </div>
-                
-                        </button>
-                
-                        <ul class="select-list">
-                
-                            <li class="select-item">
-                                <button data-select-item>Science</button>
-                            </li>
-                
-                            <li class="select-item">
-                                <button data-select-item>Art</button>
-                            </li>
-                
-                            <li class="select-item">
-                                <button data-select-item>Commerce</button>
-                            </li>
-                
-                        </ul>
-                
-                    </div>
-                
+            
+                    
+            
                     <ul class="project-list">
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">English</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Mathematics</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Civic</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Physic</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Chemistry</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Biology</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Data Processing</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Geography</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Economics</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Further Maths</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Agric Science</h2>
-                
+            
                             </a>
                         </li>
-                
-                
-                
+            
+            
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">English</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Mathematics</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Civic</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Economics</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Biology</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">C.R.S</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Literature</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Government</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Further Maths</h2>
-                
+            
                             </a>
                         </li>
-                
-                
+            
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Agric Science</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Yoruba</h2>
-                
+            
                             </a>
                         </li>
-                
-                
-                
+            
+            
+            
                         <li class="project-item  active" data-filter-item data-category="commerce">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">English</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="commerce">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Mathematics</h2>
-                
+            
                             </a>
                         </li>
-                
-                
-                
+            
+            
+            
                         <li class="project-item  active" data-filter-item data-category="commerce">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Civic</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="commerce">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Economics</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="commerce">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Biology</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="commerce">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Government</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="commerce">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Geography</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="commerce">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Commerce</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="commerce">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Accounting</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="commerce">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Further Maths</h2>
-                
+            
                             </a>
                         </li>
-                
-                
-                
+            
+            
+            
                     </ul>
-                
+            
                 </section>
+            
+            
             
             </article>
 
-            <!--
-                    - #CONTACT
-                  -->
-            
             <article class="contact" data-page="sss 3">
             
                 <header>
@@ -2002,453 +2038,429 @@
             
             
                 <section class="projects">
-                
+
+                    
+            
                     <ul class="filter-list">
-                
+            
                         <li class="filter-item">
                             <button data-filter-btn>Science</button>
                         </li>
-                
+            
                         <li class="filter-item">
                             <button data-filter-btn>Art</button>
                         </li>
-                
+            
                         <li class="filter-item">
                             <button data-filter-btn>Commerce</button>
                         </li>
-                
+            
                     </ul>
-                
-                    <div class="filter-select-box">
-                
-                        <button class="filter-select" data-select>
-                
-                            <div class="select-value" data-selecct-value>Select category</div>
-                
-                            <div class="select-icon">
-                                <ion-icon name="chevron-down"></ion-icon>
-                            </div>
-                
-                        </button>
-                
-                        <ul class="select-list">
-                
-                            <li class="select-item">
-                                <button data-select-item>Science</button>
-                            </li>
-                
-                            <li class="select-item">
-                                <button data-select-item>Art</button>
-                            </li>
-                
-                            <li class="select-item">
-                                <button data-select-item>Commerce</button>
-                            </li>
-                
-                        </ul>
-                
-                    </div>
-                
+            
                     <ul class="project-list">
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">English</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Mathematics</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Civic</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Physic</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Chemistry</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Biology</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Data Processing</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Geography</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Economics</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Further Maths</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="science">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Agric Science</h2>
-                
+            
                             </a>
                         </li>
-                
-                
-                
+            
+            
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">English</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Mathematics</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Civic</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Economics</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Biology</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">C.R.S</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Literature</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Government</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Further Maths</h2>
-                
+            
                             </a>
                         </li>
-                
-                
+            
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Agric Science</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="art">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Yoruba</h2>
-                
+            
                             </a>
                         </li>
-                
-                
-                
+            
+            
+            
                         <li class="project-item  active" data-filter-item data-category="commerce">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">English</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="commerce">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Mathematics</h2>
-                
+            
                             </a>
                         </li>
-                
-                
-                
+            
+            
+            
                         <li class="project-item  active" data-filter-item data-category="commerce">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Civic</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="commerce">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Economics</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="commerce">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Biology</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="commerce">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Government</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="commerce">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Geography</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="commerce">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Commerce</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="commerce">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Accounting</h2>
-                
+            
                             </a>
                         </li>
-                
+            
                         <li class="project-item  active" data-filter-item data-category="commerce">
                             <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                
+            
                                 <div class="card-media">
                                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                                 </div>
-                
+            
                                 <h2 class="card-title">Further Maths</h2>
-                
+            
                             </a>
                         </li>
-                
-                
-                
+            
+            
+            
                     </ul>
-                
+            
                 </section>
             
+            
+            
             </article>
+
+            
 
         </div>
 
@@ -2463,6 +2475,7 @@
     - custom js link
   -->
     <script src="./assets/js/script.js"></script>
+    
 
     <!--
     - ionicon link

@@ -5,2453 +5,601 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results Entry</title>
+    <title>NSC - resulte entries</title>
 
-    <!--
+    <!-- 
     - favicon
   -->
-    <link rel="shortcut icon" href="./assets/images/my logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/svg+xml">
 
-    <!--
+    <!-- 
     - custom css link
   -->
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/card.css">
-    <link rel="stylesheet" href="./assets/css/btn.css">
 
-    <!--
+    <!-- 
     - google font link
   -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@600;900&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
-<body>
+<body id="top">
 
-    <!-- @@@@@@@@@@@@@@@@@@@ pre loader @@@@@@@@@@@@@@@@@@@@ -->
-    <div class="preloader" id="preloader">
-        <div class="preloader-circle"></div>
-        <img src="./assets/images/preload2 (2).png" alt="" class="preloader__img" />
-    </div>
-
-    <!--
-    - #MAIN
+    <!-- 
+    - #HEADER
   -->
 
-    <main>
-        <!--
-      - #main-content
-    -->
+    <header class="header" data-header>
+        <div class="container">
 
-        <div class="main-content">
+            <div class="overlay" data-overlay></div>
 
-            <!--
-        - #NAVBAR
-      -->
+            <a href="#" class="logo">
+                <img src="./assets/images/logo.png" width="68" height="48" alt="NFTC Logo">
+            </a>
 
-            <nav class="navbar">
+            <nav class="navbar" data-navbar>
+
+                <div class="navbar-top">
+                    <p class="navbar-title">Menu</p>
+
+                    <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+                        <ion-icon name="close-circle-outline"></ion-icon>
+                    </button>
+                </div>
 
                 <ul class="navbar-list">
 
-                    <li class="navbar-item">
-                        <button class="navbar-link  active" data-nav-link>Home</button>
+                    <li>
+                        <a href="#explore" class="navbar-link" data-navlink>Exams</a>
                     </li>
 
-                    <li class="navbar-item">
-                        <button class="navbar-link" data-nav-link>JSS1</button>
+                    <li>
+                        <a href="mid.html" class="navbar-link" data-navlink>Mid-Term</a>
                     </li>
 
-                    <li class="navbar-item">
-                        <button class="navbar-link" data-nav-link>JSS 2</button>
-                    </li>
 
-                    <li class="navbar-item">
-                        <button class="navbar-link" data-nav-link>JSS 3</button>
-                    </li>
-
-                    <li class="navbar-item">
-                        <button class="navbar-link" data-nav-link>SSS 1</button>
-                    </li>
-
-                    <li class="navbar-item">
-                        <button class="navbar-link" data-nav-link>SSS 2</button>
-                    </li>
-
-                    <li class="navbar-item">
-                        <button class="navbar-link" data-nav-link>SSS 3</button>
-                    </li>
 
                 </ul>
 
             </nav>
 
-
-
-
-
-            <!--
-        - #ABOUT
-      -->
-
-            <article class="about  active" data-page="home">
-
-                <header>
-                    <h2 class="h2 article-title">Home</h2>
-                </header>
-
-                
-                <!--
-          - service
-        -->
-
-                <section class="service">
-
-                    <h3 class="h3 service-title">Class Teacher's Entry</h3>
-
-                    <ul class="service-list">
-
-                        <li class="service-item">
-
-                            <div class="service-icon-box">
-                                <img src="./assets/images/icon-design.svg" alt="design icon" width="40">
-                            </div>
-
-                            <div class="service-content-box">
-                                <h4 class="h4 service-item-title">Teacher's Comment</h4>
-
-                                <p class="service-item-text">
-                                    click below to comment on student's results
-                                </p>
-                                <a href="comment.html" class="btn btn-primary">Comment</a>
-                            </div>
-
-                        </li>
-
-                        <li class="service-item">
-
-                            <div class="service-icon-box">
-                                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
-                            </div>
-
-                            <div class="service-content-box">
-                                <h4 class="h4 service-item-title">Behavior Rating</h4>
-
-                                <p class="service-item-text">
-                                    Enter Student's Behavior Rating.
-                                </p>
-                                <a href="BR.html" class="btn btn-primary">Rating</a>
-                            </div>
-
-                        </li>
-
-                        <li class="service-item">
-
-                            <div class="service-icon-box">
-                                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
-                            </div>
-
-                            <div class="service-content-box">
-                                <h4 class="h4 service-item-title">Term / Academic Session</h4>
-
-                                <p class="service-item-text">
-                                    Has been entered already (Don't Bother)
-                                </p>
-                                <section class="sec btn">
-                                    <button class="show-modall">Term & Session</button>
-                                    <span class="overlayy"></span>
-                                
-                                    <div class="modal-boxx">
-                                        <i class="fa-regular fa-circle-check"></i>
-                                        <h2>Term / Session</h2>
-                                        <h3>Has been entered already (Don't Bother).</h3>
-                                
-                                        <div class="btn">
-                                            <button class="close-btnn">Ok, Close</button>
-                                        </div>
-                                    </div>
-                                </section>
-                                
-                                <script>
-                                    const section = document.querySelector(".sec"),
-                                        overlay = document.querySelector(".overlayy"),
-                                        showBtn = document.querySelector(".show-modall"),
-                                        closeBtn = document.querySelector(".close-btnn");
-
-                                    showBtn.addEventListener("click", () => section.classList.add("active"));
-
-                                    overlay.addEventListener("click", () =>
-                                        section.classList.remove("active")
-                                    );
-
-                                    closeBtn.addEventListener("click", () =>
-                                        section.classList.remove("active")
-                                    );
-                                </script>
-                            </div>
-
-                        </li>
-
-                        <li class="service-item">
-
-                            <div class="service-icon-box">
-                                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
-                            </div>
-
-                            <div class="service-content-box">
-                                <h4 class="h4 service-item-title">Check Results</h4>
-
-                                <p class="service-item-text">
-                                    Check Student's Results.
-                                </p>
-
-                                <section class="secc btn">
-                                    <button class="showw-modall">Results</button>
-                                    <span class="ooverlayy"></span>
-                                
-                                    <div class="modall-boxx">
-                                        <i class="fa-regular fa-circle-check"></i>
-                                        <h2>Result Checking</h2>
-                                        <h3>This will be uploaded soon.</h3>
-                                
-                                        <div class="btn">
-                                            <button class="closee-btnn">Ok, Close</button>
-                                        </div>
-                                    </div>
-                                </section>
-                                <script>
-                                    const section1 = document.querySelector(".secc"),
-                                        overlay1 = document.querySelector(".ooverlayy"),
-                                        showBtn1 = document.querySelector(".showw-modall"),
-                                        closeBtn1 = document.querySelector(".closee-btnn");
-
-                                    showBtn1.addEventListener("click", () => section1.classList.add("active"));
-
-                                    overlay1.addEventListener("click", () =>
-                                        section1.classList.remove("active")
-                                    );
-
-                                    closeBtn1.addEventListener("click", () =>
-                                        section1.classList.remove("active")
-                                    );
-                                </script>
-                            </div>
-
-                        </li>
-
-                    </ul>
-
-                </section>
-
-
-
-
-
-                <!--
-                          - service
-                        -->
-                
-                <section class="service">
-                
-                    <h3 class="h3 service-title">Principal's Entry</h3>
-                
-                    <ul class="service-list">
-                
-                        <li class="service-item">
-                
-                            <div class="service-icon-box">
-                                <img src="./assets/images/icon-design.svg" alt="design icon" width="40">
-                            </div>
-                
-                            <div class="service-content-box">
-                                <h4 class="h4 service-item-title">Principal's Comment</h4>
-                
-                                <p class="service-item-text">
-                                    Principal comment only
-                                </p>
-                                <a href="comment.html" class="btn btn-primary">P.Comment</a>
-                            </div>
-                
-                        </li>
-                
-                        
-                
-                    </ul>
-
-                    <header>
-                        <h2 class="h2 article-title">Need Help?</h2>
-                    </header>
-                    
-                    <section class="about-text">
-                    
-                        <p>
-                            Message me on any of the Social Media Platform below
-                        </p>
-                        <div class="separator"></div>
-                        
-                        <ul class="social-list">
-                        
-                            <li class="social-item">
-                                <a href="https://web.facebook.com/smartkid222/" class="social-link">
-                                    <ion-icon name="logo-facebook"></ion-icon>
-                                </a>
-                            </li>
-                        
-                            <li class="social-item">
-                                <a href="https://twitter.com/i_am_smartkid2" class="social-link">
-                                    <ion-icon name="logo-twitter"></ion-icon>
-                                </a>
-                            </li>
-                        
-                            <li class="social-item">
-                                <a href="https://www.instagram.com/smartkid222/" class="social-link">
-                                    <ion-icon name="logo-instagram"></ion-icon>
-                                </a>
-                            </li>
-                        
-                            <li class="social-item">
-                                <a href="https://www.pinterest.com/smartkid222/" class="social-link">
-                                    <ion-icon name="logo-pinterest"></ion-icon>
-                                </a>
-                            </li>
-                        
-                            <li class="social-item">
-                                <a href="https://www.tiktok.com/@smartkid222" class="social-link">
-                                    <ion-icon name="logo-tiktok"></ion-icon>
-                                </a>
-                            </li>
-                        
-                            <li class="social-item">
-                                <a href="https://github.com/Smartkid222" class="social-link">
-                                    <ion-icon name="logo-github"></ion-icon>
-                                </a>
-                            </li>
-                        
-                        </ul>
-                    </section>
-
-                    
-                
-                </section>
-
-
-                <!--
-          - testimonials modal
-        -->
-
-                <div class="modal-container" data-modal-container>
-
-                    <div class="overlay" data-overlay></div>
-
-                    <section class="testimonials-modal">
-
-                        <button class="modal-close-btn" data-modal-close-btn>
-                            <ion-icon name="close-outline"></ion-icon>
-                        </button>
-
-                        <div class="modal-img-wrapper">
-                            <figure class="modal-avatar-box">
-                                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-                            </figure>
-
-                            <img src="./assets/images/icon-quote.svg" alt="quote icon">
-                        </div>
-
-                        <div class="modal-content">
-
-                            <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-                            <time datetime="2021-06-14">14 June, 2021</time>
-
-                            <div data-modal-text>
-                                <p>
-                                    Richard was hired to create a corporate identity. We were very pleased with the work
-                                    done. She has a
-                                    lot of experience
-                                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet,
-                                    ullamcous cididt
-                                    consectetur adipiscing
-                                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </section>
-
-                </div>
-
-            </article>
-
-
-
-
-
-            <!--
-        - #RESUME
-      -->
-
-            <article class="resume" data-page="jss1">
-
-                <header>
-                    <h2 class="h2 article-title">JSS1</h2>
-                </header>
-
-                <div class="skill-content">
-                
-                    <ul class="skill-list">
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=0" class="card card-sm" style="background-color: hsl(0, 0%, 94%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-scribd" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">English</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=1101578016" class="card card-sm" style="background-color: hsl(226, 84%, 50%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Mathematics</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=1460219028" class="card card-sm" style="background-color: hsl(230, 6%, 19%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-scribd" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Civic</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=2083634843" class="card card-sm" style="background-color: hsl(41, 99%, 64%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-lightbulb" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Agric</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=1829562261" class="card card-sm" style="background-color: hsl(19, 97%, 85%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-smile" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Social Studies</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=872655567" class="card card-sm"
-                                style="background-color: hsl(221, 100%, 79%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-diamond" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Security</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=2133689309" class="card card-sm" style="background-color: hsl(76, 39%, 72%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-gavel" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Computer</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=1295919817" class="card card-sm" style="background-color: hsl(19, 100%, 90%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Home Eco</h2>
-                
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=1444466148" class="card card-sm" style="background-color: hsl(0, 100%, 90%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-jsfiddle" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Basic Sci</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=896231368" class="card card-sm" style="background-color: hsl(69, 100%, 90%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Basic Technology</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=382505115" class="card card-sm" style="background-color: hsl(124, 100%, 90%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Business Studies</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=52977042" class="card card-sm" style="background-color: hsl(199, 100%, 90%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Islamic Studies</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=1963152667" class="card card-sm" style="background-color: hsl(335, 51%, 17%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">P.H.E</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=538555380" class="card card-sm" style="background-color: hsl(245, 75%, 78%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Yoruba</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=336119529" class="card card-sm" style="background-color: hsl(0, 57%, 76%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">C.R.S</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=238962272" class="card card-sm" style="background-color: hsl(245, 75%, 78%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">French</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1dpNXRX6UAqVXHByl8AfIeNN01VkeIEBeLEJlXCFm-1U/edit#gid=1160612399" class="card card-sm" style="background-color: hsl(0, 57%, 76%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">C.C.R</h2>
-                        
-                            </a>
-                        </li>
-                
-                    </ul>
-                
-                </div>
-
-            </article>
-
-
-
-
-
-            <!--
-        - #PORTFOLIO
-      -->
-
-            <article class="portfolio" data-page="jss 2">
-
-                <header>
-                    <h2 class="h2 article-title">JSS2</h2>
-                </header>
-
-                <div class="skill-content">
-                
-                    <ul class="skill-list">
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KJvEsjmKpC50OaUwb6EAEpz3K2dzyZwqZuhbVVJ2uQQ/edit#gid=644666075" class="card card-sm" style="background-color: hsl(226, 34%, 65%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-scribd" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">English</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KJvEsjmKpC50OaUwb6EAEpz3K2dzyZwqZuhbVVJ2uQQ/edit#gid=930917884" class="card card-sm" style="background-color: hsl(0, 0%, 97%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Mathematics</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KJvEsjmKpC50OaUwb6EAEpz3K2dzyZwqZuhbVVJ2uQQ/edit#gid=614097060" class="card card-sm" style="background-color: hsl(0, 15%, 27%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-scribd" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Civic</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KJvEsjmKpC50OaUwb6EAEpz3K2dzyZwqZuhbVVJ2uQQ/edit#gid=146778207" class="card card-sm" style="background-color: hsl(41, 10%, 41%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-lightbulb" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Agric</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KJvEsjmKpC50OaUwb6EAEpz3K2dzyZwqZuhbVVJ2uQQ/edit#gid=1617136697" class="card card-sm" style="background-color: hsl(19, 10%, 37%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-smile" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Social Studies</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KJvEsjmKpC50OaUwb6EAEpz3K2dzyZwqZuhbVVJ2uQQ/edit#gid=710912472" class="card card-sm"
-                                style="background-color: hsl(56, 92%, 47%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-diamond" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Security</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KJvEsjmKpC50OaUwb6EAEpz3K2dzyZwqZuhbVVJ2uQQ/edit#gid=327569218" class="card card-sm" style="background-color: hsl(75, 98%, 48%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-gavel" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Computer</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KJvEsjmKpC50OaUwb6EAEpz3K2dzyZwqZuhbVVJ2uQQ/edit#gid=1126045424" class="card card-sm" style="background-color: hsl(81, 65%, 19%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Home Eco</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KJvEsjmKpC50OaUwb6EAEpz3K2dzyZwqZuhbVVJ2uQQ/edit#gid=627335052" class="card card-sm" style="background-color: hsl(125, 57%, 25%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-jsfiddle" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Basic Sci</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KJvEsjmKpC50OaUwb6EAEpz3K2dzyZwqZuhbVVJ2uQQ/edit#gid=748048356" class="card card-sm" style="background-color: hsl(81, 53%, 32%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Basic Technology</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KJvEsjmKpC50OaUwb6EAEpz3K2dzyZwqZuhbVVJ2uQQ/edit#gid=151187150" class="card card-sm" style="background-color: hsl(127, 55%, 21%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Business Studies</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KJvEsjmKpC50OaUwb6EAEpz3K2dzyZwqZuhbVVJ2uQQ/edit#gid=237951632" class="card card-sm" style="background-color: hsl(180, 56%, 26%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Islamic Studies</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KJvEsjmKpC50OaUwb6EAEpz3K2dzyZwqZuhbVVJ2uQQ/edit#gid=152488620" class="card card-sm" style="background-color: hsl(245, 40%, 28%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">P.H.E</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KJvEsjmKpC50OaUwb6EAEpz3K2dzyZwqZuhbVVJ2uQQ/edit#gid=1807867567" class="card card-sm" style="background-color: hsl(315, 48%, 32%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Yoruba</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KJvEsjmKpC50OaUwb6EAEpz3K2dzyZwqZuhbVVJ2uQQ/edit#gid=664713682" class="card card-sm" style="background-color: hsl(0, 14%, 50%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">C.R.S</h2>
-                
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KJvEsjmKpC50OaUwb6EAEpz3K2dzyZwqZuhbVVJ2uQQ/edit#gid=1642054574" class="card card-sm" style="background-color: hsl(245, 75%, 78%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">French</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KJvEsjmKpC50OaUwb6EAEpz3K2dzyZwqZuhbVVJ2uQQ/edit#gid=1500616564" class="card card-sm" style="background-color: hsl(0, 57%, 76%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">C.C.R</h2>
-                        
-                            </a>
-                        </li>
-                
-                    </ul>
-                
-                </div>
-
-            </article>
-
-
-
-
-
-            <!--
-        - #BLOG
-      -->
-
-            <article class="blog" data-page="jss 3">
-
-                <header>
-                    <h2 class="h2 article-title">JSS3</h2>
-                </header>
-
-                <div class="skill-content">
-                
-                    <ul class="skill-list">
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KXvoe6gXveL3vf9X6vuvsFJly5g3T75Xg-dzULsgvnI/edit#gid=1880720574" class="card card-sm" style="background-color: hsl(0, 90%, 49%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-scribd" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">English</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KXvoe6gXveL3vf9X6vuvsFJly5g3T75Xg-dzULsgvnI/edit#gid=511065767" class="card card-sm" style="background-color: hsl(52, 94%, 49%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Mathematics</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KXvoe6gXveL3vf9X6vuvsFJly5g3T75Xg-dzULsgvnI/edit#gid=996941736" class="card card-sm" style="background-color: hsl(86, 88%, 49%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-scribd" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Civic</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KXvoe6gXveL3vf9X6vuvsFJly5g3T75Xg-dzULsgvnI/edit#gid=15788402" class="card card-sm" style="background-color: hsl(41, 99%, 64%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-lightbulb" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Agric</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KXvoe6gXveL3vf9X6vuvsFJly5g3T75Xg-dzULsgvnI/edit#gid=337323690" class="card card-sm" style="background-color: hsl(19, 91%, 44%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-smile" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Social Studies</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KXvoe6gXveL3vf9X6vuvsFJly5g3T75Xg-dzULsgvnI/edit#gid=1198500168" class="card card-sm"
-                                style="background-color: hsl(135, 91%, 41%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-diamond" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Security</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KXvoe6gXveL3vf9X6vuvsFJly5g3T75Xg-dzULsgvnI/edit#gid=1706399955" class="card card-sm" style="background-color: hsl(160, 93%, 41%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-gavel" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Computer</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KXvoe6gXveL3vf9X6vuvsFJly5g3T75Xg-dzULsgvnI/edit#gid=697006837" class="card card-sm" style="background-color: hsl(281, 83%, 43%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Home Eco</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KXvoe6gXveL3vf9X6vuvsFJly5g3T75Xg-dzULsgvnI/edit#gid=1521747910" class="card card-sm" style="background-color: hsl(202, 92%, 40%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-jsfiddle" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Basic Sci</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KXvoe6gXveL3vf9X6vuvsFJly5g3T75Xg-dzULsgvnI/edit#gid=140478038" class="card card-sm" style="background-color: hsl(245, 64%, 20%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Basic Technology</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KXvoe6gXveL3vf9X6vuvsFJly5g3T75Xg-dzULsgvnI/edit#gid=993046005" class="card card-sm" style="background-color: hsl(162, 82%, 22%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Business Studies</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KXvoe6gXveL3vf9X6vuvsFJly5g3T75Xg-dzULsgvnI/edit#gid=1373832719" class="card card-sm" style="background-color: hsl(81, 84%, 29%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Islamic Studies</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KXvoe6gXveL3vf9X6vuvsFJly5g3T75Xg-dzULsgvnI/edit#gid=1710718010" class="card card-sm" style="background-color: hsl(34, 83%, 14%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">P.H.E</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KXvoe6gXveL3vf9X6vuvsFJly5g3T75Xg-dzULsgvnI/edit#gid=600429204" class="card card-sm" style="background-color: hsl(245, 41%, 76%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">Yoruba</h2>
-                
-                            </a>
-                        </li>
-                
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KXvoe6gXveL3vf9X6vuvsFJly5g3T75Xg-dzULsgvnI/edit#gid=2000469919" class="card card-sm" style="background-color: hsl(309, 63%, 15%)">
-                
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                
-                                <h2 class="card-title">C.R.S</h2>
-                
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KXvoe6gXveL3vf9X6vuvsFJly5g3T75Xg-dzULsgvnI/edit#gid=1092614908" class="card card-sm" style="background-color: hsl(245, 75%, 78%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">French</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/1KXvoe6gXveL3vf9X6vuvsFJly5g3T75Xg-dzULsgvnI/edit#gid=1513469366" class="card card-sm" style="background-color: hsl(0, 57%, 76%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">C.C.R</h2>
-                        
-                            </a>
-                        </li>
-                
-                    </ul>
-                
-                </div>
-
-            </article>
-
-
-
-
-
-            <!--
-        - #CONTACT
-      -->
-
-            <article class="contact" data-page="sss 1">
-
-                <header>
-                    <h2 class="h2 article-title">SSS1</h2>
-                </header>
-
-
-
-                <section class="projects">
-                
-                    <ul class="filter-list">
-
-                        <li class="filter-item">
-                            <button data-filter-btn>Science</button>
-                        </li>
-                
-                        <li class="filter-item">
-                            <button data-filter-btn>Art</button>
-                        </li>
-                
-                        <li class="filter-item">
-                            <button data-filter-btn>Commerce</button>
-                        </li>
-                
-                    </ul>
-                
-                    <div class="filter-select-box">
-                
-                        <button class="filter-select" data-select>
-                
-                            <div class="select-value" data-selecct-value>Select category</div>
-                
-                            <div class="select-icon">
-                                <ion-icon name="chevron-down"></ion-icon>
-                            </div>
-                
-                        </button>
-                
-                        <ul class="select-list">
-                
-                            <li class="select-item">
-                                <button data-select-item>Science</button>
-                            </li>
-                
-                            <li class="select-item">
-                                <button data-select-item>Art</button>
-                            </li>
-                
-                            <li class="select-item">
-                                <button data-select-item>Commerce</button>
-                            </li>
-                
-                        </ul>
-                
-                    </div>
-                
-                    <ul class="project-list">
-                
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=1880720574" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                            
-                                <h2 class="card-title">English</h2>
-                            
-                            </a>
-                        </li>
-                
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=511065767" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                            
-                                <h2 class="card-title">Mathematics</h2>
-                            
-                            </a>
-                        </li>
-                
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=996941736" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                            
-                                <h2 class="card-title">Civic</h2>
-                            
-                            </a>
-                        </li>
-                
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=1710718010" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                            
-                                <h2 class="card-title">Physic</h2>
-                            
-                            </a>
-                        </li>
-                
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=993046005" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                            
-                                <h2 class="card-title">Chemistry</h2>
-                            
-                            </a>
-                        </li>
-                
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=1521747910" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                            
-                                <h2 class="card-title">Biology</h2>
-                            
-                            </a>
-                        </li>
-                
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=1706399955" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                            
-                                <h2 class="card-title">Data Processing</h2>
-                            
-                            </a>
-                        </li>
-                
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=140478038" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                            
-                                <h2 class="card-title">Geography</h2>
-                            
-                            </a>
-                        </li>
-                
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=697006837" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                            
-                                <h2 class="card-title">Economics</h2>
-                            
-                            </a>
-                        </li>
-
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=337323690" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Further Maths</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=15788402" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Agric Science</h2>
-                        
-                            </a>
-                        </li>
-
-                        
-
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=1880720574" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">English</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=511065767" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Mathematics</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=996941736" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Civic</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=697006837" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Economics</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=1521747910" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Biology</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=2000469919" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">C.R.S</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=1198500168" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Literature</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=370517468" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Government</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=337323690" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Further Maths</h2>
-                        
-                            </a>
-                        </li>
-
-
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=1335277268" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Catering Craft </h2>
-                        
-                            </a>
-                        </li>
-
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=600429204" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Yoruba</h2>
-                        
-                            </a>
-                        </li>
-
-                        
-
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=1880720574" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">English</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=511065767" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Mathematics</h2>
-                        
-                            </a>
-                        </li>
-
-                        
-
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=996941736" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Civic</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=697006837" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Economics</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=1521747910" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Biology</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=370517468" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Government</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=255659847" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Marketing</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=178552798" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Commerce</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=533390157" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Accounting</h2>
-                        
-                            </a>
-                        </li>
-
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="https://docs.google.com/spreadsheets/d/1MADSUt49KOOir1hsfElTPG34mRytWXs-uf9VlQT-ues/edit#gid=337323690" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-                        
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-                        
-                                <h2 class="card-title">Further Maths</h2>
-                        
-                            </a>
-                        </li>
-
-                        
-                
-                    </ul>
-                
-                </section>
-
-
-
-            </article>
-
-            <article class="contact" data-page="sss 2">
-            
-                <header>
-                    <h2 class="h2 article-title">SSS2</h2>
-                </header>
-
-                <div class="modal" data-modal>
-                
-                    <div class="modal-close-overlay" data-modal-overlay></div>
-                
-                    <div class="modal-content">
-                
-                        <button class="modal-close-btn" data-modal-close>
-                            <ion-icon name="close-outline"></ion-icon>
-                        </button>
-                
-                        <div class="newsletter-img">
-                            <img src="./assets/images/bk1.jpeg" alt="subscribe newsletter" width="400" height="400">
-                        </div>
-                
-                        <div class="newsletter">
-                
-                            <form action="#">
-                
-                                <div class="newsletter-header">
-                
-                                    <h3 class="newsletter-title">Note.</h3>
-                
-                                    <p class="newsletter-desc">
-                                        Pls Note That The Department are separated by colours. starting with science, followed by Art and then Commerce
-                                    </p>
-                
-                                </div>
-                
-                            </form>
-                
-                        </div>
-                
-                    </div>
-                
-                </div>
-
-            
-            
-            
-                <section class="projects">
-            
-                    <ul class="filter-list">
-            
-                        <li class="filter-item">
-                            <button data-filter-btn>Science</button>
-                        </li>
-            
-                        <li class="filter-item">
-                            <button data-filter-btn>Art</button>
-                        </li>
-            
-                        <li class="filter-item">
-                            <button data-filter-btn>Commerce</button>
-                        </li>
-            
-                    </ul>
-            
-                    
-            
-                    <ul class="project-list">
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=1880720574" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">English</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=511065767" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Mathematics</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=996941736" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Civic</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=1710718010" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Physic</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=993046005" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Chemistry</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=1521747910" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Biology</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=1706399955" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Data Processing</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=140478038" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Geography</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=697006837" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Economics</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=337323690" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Further Maths</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=15788402" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Agric Science</h2>
-            
-                            </a>
-                        </li>
-            
-            
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=1880720574" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">English</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=511065767" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Mathematics</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=996941736" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Civic</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=697006837" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Economics</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=1521747910" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Biology</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=2000469919" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">C.R.S</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=1198500168" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Literature</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=370517468" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Government</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=337323690" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Further Maths</h2>
-            
-                            </a>
-                        </li>
-            
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=1335277268" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Creating Craft</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=600429204" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Yoruba</h2>
-            
-                            </a>
-                        </li>
-            
-            
-            
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=1880720574" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">English</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=511065767" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Mathematics</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=996941736" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Civic</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=697006837" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Economics</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=1521747910" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Biology</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=370517468" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Government</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=255659847" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Marketing</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=178552798" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Commerce</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=533390157" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Accounting</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="https://docs.google.com/spreadsheets/d/137F1VSObbb92Bg0b74EM3GeNxfbG04eS_iC4pm-kA6U/edit#gid=337323690" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Further Maths</h2>
-            
-                            </a>
-                        </li>
-            
-            
-            
-                    </ul>
-            
-                </section>
-            
-            
-            
-            </article>
-
-            <article class="contact" data-page="sss 3">
-            
-                <header>
-                    <h2 class="h2 article-title">SSS3</h2>
-                </header>
-            
-            
-            
-                <section class="projects">
-
-                    
-            
-                    <ul class="filter-list">
-            
-                        <li class="filter-item">
-                            <button data-filter-btn>Science</button>
-                        </li>
-            
-                        <li class="filter-item">
-                            <button data-filter-btn>Art</button>
-                        </li>
-            
-                        <li class="filter-item">
-                            <button data-filter-btn>Commerce</button>
-                        </li>
-            
-                    </ul>
-            
-                    <ul class="project-list">
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">English</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Mathematics</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Civic</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Physic</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Chemistry</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Biology</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Data Processing</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Geography</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Economics</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Further Maths</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="science">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Agric Science</h2>
-            
-                            </a>
-                        </li>
-            
-            
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">English</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Mathematics</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Civic</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Economics</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Biology</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">C.R.S</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Literature</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Government</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Further Maths</h2>
-            
-                            </a>
-                        </li>
-            
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Agric Science</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="art">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(44, 82%, 52%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Yoruba</h2>
-            
-                            </a>
-                        </li>
-            
-            
-            
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">English</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Mathematics</h2>
-            
-                            </a>
-                        </li>
-            
-            
-            
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Civic</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Economics</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Biology</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Government</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Geography</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Commerce</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Accounting</h2>
-            
-                            </a>
-                        </li>
-            
-                        <li class="project-item  active" data-filter-item data-category="commerce">
-                            <a href="./games/typing/index.html" class="card card-sm" style="background-color: hsl(245, 88%, 50%)">
-            
-                                <div class="card-media">
-                                    <i class="fa fa-keyboard" aria-hidden="true"></i>
-                                </div>
-            
-                                <h2 class="card-title">Further Maths</h2>
-            
-                            </a>
-                        </li>
-            
-            
-            
-                    </ul>
-            
-                </section>
-            
-            
-            
-            </article>
-
-            
+            <button class="menu-open-btn" aria-label="Open Menu" data-nav-open-btn>
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+
+            <a href="seer.html" class="btn" aria-labelledby="wallet">
+                <ion-icon name="create-outline"></ion-icon>
+
+                <span id="create-outline">See Result</span>
+            </a>
 
         </div>
+    </header>
 
+
+
+
+
+    <main>
+        <article>
+
+            <!-- 
+        - #HERO
+      -->
+
+            <section class="hero" id="home">
+
+                <div class="container">
+
+                    <p class="section-subtitle">Nifty Steps College</p>
+
+                    <h2 class="h1 hero-title">…we make learning so much fun for our children.</h2>
+
+                    <p class="hero-text">
+
+                    </p>
+
+                    <div class="btn-group">
+
+                        <button class="btn">
+                            <ion-icon name="rocket-outline" aria-hidden="true"></ion-icon>
+
+                            <span><a href="#explore" data-navlink>Explore</a></span>
+                        </button>
+
+                        <button class="btn">
+                            <ion-icon name="create-outline" aria-hidden="true"></ion-icon>
+
+                            <span>Table</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <svg class="hero-bg-bottom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 465" version="1.1">
+                    <defs>
+                        <linearGradient x1="49.7965246%" y1="28.2355058%" x2="49.7778147%" y2="98.4657689%"
+                            id="linearGradient-1">
+                            <stop stop-color="rgba(69,40,220, 0.15)" offset="0%"></stop>
+                            <stop stop-color="rgba(87,4,138, 0.15)" offset="100%"></stop>
+                        </linearGradient>
+                    </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <polygon points="" fill="url(#linearGradient-1)">
+                            <animate id="graph-animation" xmlns="http://www.w3.org/2000/svg" dur="2s" repeatCount=""
+                                attributeName="points"
+                                values="0,464 0,464 111.6,464 282.5,464 457.4,464 613.4,464 762.3,464 912.3,464 1068.2,464 1191.2,464 1328.1,464 1440.1,464 1440.1,464 0,464; 0,464 0,367 111.6,323.3 282.5,373 457.4,423.8 613.4,464 762.3,464 912.3,464 1068.2,464 1191.2,464 1328.1,464 1440.1,464 1440.1,464 0,464; 0,464 0,367 111.6,263 282.5,336.6 457.4,363.5 613.4,414.4 762.3,464 912.3,464 1068.2,464 1191.2,464 1328.1,464 1440.1,464 1440.1,464 0,464; 0,464 0,367 111.6,263 282.5,282 457.4,323.3 613.4,340 762.3,425.6 912.3,464 1068.2,464 1191.2,464 1328.1,464 1440.1,464 1440.1,464 0,464; 0,464 0,367 111.6,263 282.5,282 457.4,263 613.4,290.4 762.3,368 912.3,446.4 1068.2,464 1191.2,464 1328.1,464 1440.1,464 1440.1,464 0,464; 0,464 0,367 111.6,263 282.5,282 457.4,263 613.4,216 762.3,329.6 912.3,420 1068.2,427.6 1191.2,464 1328.1,464 1440.1,464 1440.1,464 0,464; 0,464 0,367 111.6,263 282.5,282 457.4,263 613.4,216 762.3,272 912.3,402.4 1068.2,373 1191.2,412 1328.1,464 1440.1,464 1440.1,464 0,464; 0,464 0,367 111.6,263 282.5,282 457.4,263 613.4,216 762.3,272 912.3,376 1068.2,336.6 1191.2,334 1328.1,404 1440.1,464 1440.1,464 0,464; 0,464 0,367 111.6,263 282.5,282 457.4,263 613.4,216 762.3,272 912.3,376 1068.2,282 1191.2,282 1328.1,314 1440.1,372.8 1440.1,464 0,464; 0,464 0,367 111.6,263 282.5,282 457.4,263 613.4,216 762.3,272 912.3,376 1068.2,282 1191.2,204 1328.1,254 1440.1,236 1440.1,464 0,464; 0,464 0,367 111.6,263 282.5,282 457.4,263 613.4,216 762.3,272 912.3,376 1068.2,282 1191.2,204 1328.1,164 1440.1,144.79999999999998 1440.1,464 0,464; 0,464 0,367 111.6,263 282.5,282 457.4,263 613.4,216 762.3,272 912.3,376 1068.2,282 1191.2,204 1328.1,164 1440.1,8 1440.1,464 0,464;"
+                                fill="freeze"></animate>
+                        </polygon>
+                    </g>
+                </svg>
+
+            </section>
+
+
+
+
+
+            <!-- 
+        - #EXPLORE
+      -->
+
+            <section class="section explore" id="explore">
+                <div class="container">
+
+                    <p class="section-subtitle">Exclusive Assets</p>
+
+                    <div class="title-wrapper">
+                        <h2 class="h2 section-title">Exams</h2>
+
+                        <a href="class.html" class="btn-link">
+                            <span>Explore All</span>
+
+                            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                        </a>
+                    </div>
+
+                    <ul class="grid-list">
+
+                        <li>
+                            <div class="card explore-card">
+
+                                <figure class="card-banner">
+                                    <a href="subjects/jss1.html">
+                                        <img src="./assets/images/auction-1.jpg" width="600" height="600" loading="lazy"
+                                            alt="Walking On Air" class="img-cover">
+                                    </a>
+                                </figure>
+
+                                <h3 class="h3 card-title">
+                                    <a href="subjects/jss1.html">JSS1</a>
+                                </h3>
+
+                                <span class="card-author">
+                                    Class Teacher: <a href="#" class="author-link">Richard</a>
+                                </span>
+
+                                <button class="btn">
+                                    <ion-icon name="bag-add-outline" aria-hidden="true"></ion-icon>
+
+                                    <span><a href="subjects/jss1.html">Enter Result</a></span>
+                                </button>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="card explore-card">
+
+                                <figure class="card-banner">
+                                    <a href="subjects/jss2.html">
+                                        <img src="./assets/images/auction-2.jpg" width="600" height="600" loading="lazy"
+                                            alt="Domain Names" class="img-cover">
+                                    </a>
+                                </figure>
+
+                                <h3 class="h3 card-title">
+                                    <a href="subjects/jss2.html">JSS2</a>
+                                </h3>
+
+                                <span class="card-author">
+                                    Class Teacher: <a href="#" class="author-link">John Deo</a>
+                                </span>
+
+                                
+
+                                <button class="btn">
+                                    <ion-icon name="bag-add-outline" aria-hidden="true"></ion-icon>
+
+                                    <span><a href="subjects/jss2.html">Enter Result</a></span>
+                                </button>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="card explore-card">
+
+                                <figure class="card-banner">
+                                    <a href="subjects/jss3.html">
+                                        <img src="./assets/images/auction-3.jpg" width="600" height="600" loading="lazy"
+                                            alt="Domain Names" class="img-cover">
+                                    </a>
+                                </figure>
+
+                                <h3 class="h3 card-title">
+                                    <a href="subjects/jss3.html">JSS3</a>
+                                </h3>
+
+                                <span class="card-author">
+                                    Class Teacher: <a href="#" class="author-link">John Deo</a>
+                                </span>
+
+                                
+
+                                <button class="btn">
+                                    <ion-icon name="bag-add-outline" aria-hidden="true"></ion-icon>
+
+                                    <span><a href="subjects/jss3.html">Enter Result</a></span>
+                                </button>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="card explore-card">
+
+                                <figure class="card-banner">
+                                    <a href="#">
+                                        <img src="./assets/images/auction-4.jpg" width="600" height="600" loading="lazy"
+                                            alt="Trading Cards" class="img-cover">
+                                    </a>
+                                </figure>
+
+                                <h3 class="h3 card-title">
+                                    <a href="subjects/sss1.html">SSS1</a>
+                                </h3>
+
+                                <span class="card-author">
+                                    Class Teacher: <a href="#" class="author-link">Arham</a>
+                                </span>
+
+                                
+
+                                <button class="btn">
+                                    <ion-icon name="bag-add-outline" aria-hidden="true"></ion-icon>
+
+                                    <span><a href="subjects/sss1.html">Enter Result</a></span>
+                                </button>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="card explore-card">
+
+                                <figure class="card-banner">
+                                    <a href="subjects/sss2.html">
+                                        <img src="./assets/images/auction-5.jpg" width="600" height="600" loading="lazy"
+                                            alt="Trading Cards" class="img-cover">
+                                    </a>
+                                </figure>
+
+                                <h3 class="h3 card-title">
+                                    <a href="subjects/sss2.html">SSS2</a>
+                                </h3>
+
+                                <span class="card-author">
+                                    Class Teacher: <a href="#" class="author-link">Arham</a>
+                                </span>
+
+                                
+
+                                <button class="btn">
+                                    <ion-icon name="bag-add-outline" aria-hidden="true"></ion-icon>
+
+                                    <span><a href="subjects/sss2.html">Enter Result</a></span>
+                                </button>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="card explore-card">
+
+                                <figure class="card-banner">
+                                    <a href="subjects/sss3.html">
+                                        <img src="./assets/images/auction-6.jpg" width="600" height="600" loading="lazy"
+                                            alt="Industrial Revolution" class="img-cover">
+                                    </a>
+                                </figure>
+
+                                <h3 class="h3 card-title">
+                                    <a href="subjects/sss3.html">SSS3</a>
+                                </h3>
+
+                                <span class="card-author">
+                                    Class Teacher: <a href="#" class="author-link">Yasmin</a>
+                                </span>
+
+                                
+
+                                <button class="btn">
+                                    <ion-icon name="bag-add-outline" aria-hidden="true"></ion-icon>
+
+                                    <span><a href="subjects/sss3.html">Enter Result</a></span>
+                                </button>
+
+                            </div>
+                        </li>
+
+
+                        
+
+                    </ul>
+
+                </div>
+            </section>
+
+
+            <!-- 
+                    - #INSTRUCTION
+                  -->
+            
+            <section class="section instruction" id="instruction">
+                <div class="container">
+            
+                    <p class="section-subtitle">Comment entries</p>
+            
+                    <h2 class="h2 section-title">Enter and Record Students Comment</h2>
+            
+                    <ul class="grid-list">
+            
+                        <li class="instruction-item">
+            
+                            <a href="#">
+                                <div class="instruction-icon">
+                                    <ion-icon name="wallet-outline"></ion-icon>
+                                </div>
+                                
+                                <h3 class="instruction-title">Teacher's Comment</h3>
+                                
+                                <p class="instruction-text">
+                                    You've reached the end of another grading period, and
+                                    what could be more daunting than the task of composing
+                                    comments about every child in your class.
+                                </p>
+                            </a>
+            
+                        </li>
+            
+                        <li class="instruction-item">
+            
+                            <a href="#">
+                                <div class="instruction-icon">
+                                    <ion-icon name="grid-outline"></ion-icon>
+                                </div>
+                                
+                                <h3 class="instruction-title">Principal's Comment</h3>
+                                
+                                <p class="instruction-text">
+                                    You've reached the end of another grading period, time to
+                                    Create and compose comments about the students grading.
+                                </p>
+                            </a>
+            
+                        </li>
+            
+                        <li class="instruction-item">
+            
+                            <a href="#">
+                                <div class="instruction-icon">
+                                    <ion-icon name="file-tray-outline"></ion-icon>
+                                </div>
+                                
+                                <h3 class="instruction-title">Behavior Rating</h3>
+                                
+                                <p class="instruction-text">
+                                    Upload Behavior rating about every child in your class.
+                                </p>
+                            </a>
+            
+                        </li>
+            
+                        <li class="instruction-item">
+            
+                            <a href="#">
+                                <div class="instruction-icon">
+                                    <ion-icon name="bag-handle-outline"></ion-icon>
+                                </div>
+                                
+                                <h3 class="instruction-title">Performance Checking</h3>
+                                
+                                <p class="instruction-text">
+                                    Check and see Performance for students in all classes
+                                </p>
+                            </a>
+            
+                        </li>
+            
+                    </ul>
+            
+                </div>
+            </section>
+
+
+
+        </article>
     </main>
 
 
 
 
 
+    <!-- 
+    - #FOOTER
+  -->
 
-    <!--
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-top">
+
+                <div class="footer-brand">
+
+                    <a href="#" class="logo">
+                        <img src="./assets/images/logo.png" width="68" height="48" alt="NFTC Logo">
+                    </a>
+
+                    <p class="footer-text">
+                        …we make learning so much fun for our children.
+                    </p>
+
+                    <ul class="social-list">
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-twitter"></ion-icon>
+                                <ion-icon name="logo-twitter"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-pinterest"></ion-icon>
+                                <ion-icon name="logo-pinterest"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-discord"></ion-icon>
+                                <ion-icon name="logo-discord"></ion-icon>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <p class="footer-list-title">Useful Links</p>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">All Classes</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Result</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Class Table</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Explore</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Privacy & Terms</a>
+                    </li>
+
+                </ul>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <p class="footer-list-title">Community</p>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Help Center</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Partners</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Suggestions</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Blog</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Newsletter</a>
+                    </li>
+
+                </ul>
+
+                <div class="footer-list">
+
+                    <p class="footer-list-title">Subscribe Us</p>
+
+                    <form action="" class="newsletter-form">
+                        <input type="email" name="email" placeholder="info@yourmail.com" required
+                            class="newsletter-input">
+
+                        <button type="submit" class="newsletter-btn" aria-label="Submit">
+                            <ion-icon name="paper-plane-outline"></ion-icon>
+                        </button>
+                    </form>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; 2023 <a href="https://smartkid222.github.io/SK-Website/site.html#"
+                        class="copyright-link">SmarTech</a>. All Rights Reserved
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+
+
+    <!-- 
+    - #BACK TO TOP
+  -->
+
+    <a href="#top" class="back-to-top" aria-label="Back to Top" data-back-top-btn>
+        <ion-icon name="arrow-up-outline"></ion-icon>
+    </a>
+
+
+
+
+
+    <!-- 
     - custom js link
   -->
     <script src="./assets/js/script.js"></script>
-    
 
-    <!--
+    <!-- 
     - ionicon link
   -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

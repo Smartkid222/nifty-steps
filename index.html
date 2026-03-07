@@ -1,0 +1,4409 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Nifty Steps School - Excellence in Primary and Secondary Education. Nurturing minds, building futures."
+    />
+    <title>Nifty Steps School | Crescat Scientia; Vita Excolatur</title>
+    <!-- 
+    - favicon
+  -->
+    <link rel="shortcut icon" href="img/NSS LOGO.png" type="image/svg+xml" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: {
+                50: "#f0f4f8",
+                100: "#d9e2ec",
+                200: "#bcccdc",
+                300: "#9fb3c8",
+                400: "#829ab1",
+                500: "#627d98",
+                600: "#486581",
+                700: "#334e68",
+                800: "#243b53",
+                900: "#102a43",
+              },
+              gold: {
+                50: "#fffbeb",
+                100: "#fef3c7",
+                200: "#fde68a",
+                300: "#fcd34d",
+                400: "#fbbf24",
+                500: "#d4a012",
+                600: "#b8860b",
+                700: "#92400e",
+              },
+              cream: "#faf8f5",
+            },
+            fontFamily: {
+              display: ["Playfair Display", "serif"],
+              sans: ["DM Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      :root {
+        --bg: #faf8f5;
+        --fg: #102a43;
+        --muted: #627d98;
+        --accent: #d4a012;
+        --card: #ffffff;
+        --border: #d9e2ec;
+        --navy: #102a43;
+        --gold: #d4a012;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--bg);
+        color: var(--fg);
+        overflow-x: hidden;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--bg);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--navy);
+        border-radius: 5px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--accent);
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes scaleIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      @keyframes blob {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        25% {
+          transform: translate(20px, -30px) scale(1.1);
+        }
+        50% {
+          transform: translate(-20px, 20px) scale(0.9);
+        }
+        75% {
+          transform: translate(30px, 10px) scale(1.05);
+        }
+      }
+
+      .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+
+      .animate-fade-in {
+        animation: fadeIn 0.6s ease-out forwards;
+      }
+
+      .animate-slide-left {
+        animation: slideInLeft 0.8s ease-out forwards;
+      }
+
+      .animate-slide-right {
+        animation: slideInRight 0.8s ease-out forwards;
+      }
+
+      .animate-scale-in {
+        animation: scaleIn 0.6s ease-out forwards;
+      }
+
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .animate-blob {
+        animation: blob 8s ease-in-out infinite;
+      }
+
+      /* Staggered animations */
+      .stagger-1 {
+        animation-delay: 0.1s;
+      }
+      .stagger-2 {
+        animation-delay: 0.2s;
+      }
+      .stagger-3 {
+        animation-delay: 0.3s;
+      }
+      .stagger-4 {
+        animation-delay: 0.4s;
+      }
+      .stagger-5 {
+        animation-delay: 0.5s;
+      }
+      .stagger-6 {
+        animation-delay: 0.6s;
+      }
+
+      /* Initially hidden for animation */
+      .reveal {
+        opacity: 0;
+      }
+
+      .reveal.active {
+        opacity: 1;
+      }
+
+      /* Hero Background */
+      .hero-bg {
+        background: linear-gradient(
+          135deg,
+          #102a43 0%,
+          #243b53 50%,
+          #334e68 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-bg::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4a012' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        opacity: 0.5;
+      }
+
+      /* Gradient text */
+      .gradient-text {
+        background: linear-gradient(
+          135deg,
+          #d4a012 0%,
+          #fbbf24 50%,
+          #d4a012 100%
+        );
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradientShift 3s ease infinite;
+      }
+
+      /* Card styles */
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px -12px rgba(16, 42, 67, 0.15);
+        border-color: var(--accent);
+      }
+
+      /* Button styles */
+      .btn-primary {
+        background: linear-gradient(135deg, var(--navy) 0%, #334e68 100%);
+        color: white;
+        padding: 14px 32px;
+        border-radius: 12px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-primary::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .btn-primary:hover::before {
+        left: 100%;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(16, 42, 67, 0.3);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--navy);
+        padding: 14px 32px;
+        border-radius: 12px;
+        font-weight: 600;
+        border: 2px solid var(--navy);
+        transition: all 0.3s ease;
+      }
+
+      .btn-secondary:hover {
+        background: var(--navy);
+        color: white;
+      }
+
+      .btn-gold {
+        background: linear-gradient(135deg, var(--gold) 0%, #fbbf24 100%);
+        color: var(--navy);
+        padding: 14px 32px;
+        border-radius: 12px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .btn-gold:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(212, 160, 18, 0.4);
+      }
+
+      /* Navigation */
+      .nav-link {
+        position: relative;
+        color: #334e68;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gold);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--navy);
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .nav-link.active {
+        color: var(--navy);
+      }
+
+      .nav-link.active::after {
+        width: 100%;
+      }
+
+      /* Section styles */
+      .section {
+        display: none;
+        min-height: 100vh;
+        padding-top: 80px;
+      }
+
+      .section.active {
+        display: block;
+      }
+
+      /* Blob shapes */
+      .blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+        opacity: 0.4;
+        pointer-events: none;
+      }
+
+      /* Form styles */
+      .form-input {
+        width: 100%;
+        padding: 14px 18px;
+        border: 2px solid var(--border);
+        border-radius: 12px;
+        background: white;
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
+
+      .form-input:focus {
+        outline: none;
+        border-color: var(--gold);
+        box-shadow: 0 0 0 4px rgba(212, 160, 18, 0.1);
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: var(--navy);
+      }
+
+      /* Gallery filter */
+      .filter-btn {
+        padding: 10px 24px;
+        border-radius: 30px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        background: transparent;
+        border: 2px solid var(--border);
+      }
+
+      .filter-btn.active,
+      .filter-btn:hover {
+        background: var(--navy);
+        color: white;
+        border-color: var(--navy);
+      }
+
+      /* Modal */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(16, 42, 67, 0.8);
+        backdrop-filter: blur(8px);
+        z-index: 100;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .modal.active {
+        display: flex;
+      }
+
+      .modal-content {
+        background: white;
+        border-radius: 24px;
+        max-width: 500px;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        animation: scaleIn 0.3s ease-out;
+      }
+
+      /* Chatbot */
+      .chatbot-btn {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 64px;
+        height: 64px;
+        background: linear-gradient(135deg, var(--gold) 0%, #fbbf24 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 10px 40px rgba(212, 160, 18, 0.4);
+        z-index: 90;
+        transition: all 0.3s ease;
+      }
+
+      .chatbot-btn:hover {
+        transform: scale(1.1);
+      }
+
+      .chatbot-window {
+        position: fixed;
+        bottom: 100px;
+        right: 24px;
+        width: 380px;
+        max-width: calc(100vw - 48px);
+        height: 500px;
+        max-height: calc(100vh - 140px);
+        background: white;
+        border-radius: 24px;
+        box-shadow: 0 25px 80px rgba(16, 42, 67, 0.25);
+        z-index: 89;
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .chatbot-window.active {
+        display: flex;
+        animation: scaleIn 0.3s ease-out;
+      }
+
+      /* Mobile menu */
+      .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        z-index: 80;
+        padding: 100px 24px 24px;
+        transform: translateX(-100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+      }
+
+      .mobile-menu.active {
+        transform: translateX(0);
+      }
+
+      /* Counter animation */
+      .counter {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--navy);
+      }
+
+      /* Timeline */
+      .timeline-item {
+        position: relative;
+        padding-left: 40px;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 16px;
+        height: 16px;
+        background: var(--gold);
+        border-radius: 50%;
+      }
+
+      .timeline-item::after {
+        content: "";
+        position: absolute;
+        left: 7px;
+        top: 28px;
+        width: 2px;
+        height: calc(100% - 20px);
+        background: var(--border);
+      }
+
+      .timeline-item:last-child::after {
+        display: none;
+      }
+
+      /* Reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      /* Focus styles */
+      *:focus-visible {
+        outline: 3px solid var(--gold);
+        outline-offset: 2px;
+      }
+
+      /* Portal tabs */
+      .portal-tab {
+        padding: 12px 24px;
+        border-radius: 12px 12px 0 0;
+        font-weight: 600;
+        background: var(--border);
+        color: var(--muted);
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .portal-tab.active {
+        background: white;
+        color: var(--navy);
+      }
+
+      /* Calendar */
+      .calendar-day {
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-weight: 500;
+      }
+
+      .calendar-day:hover {
+        background: var(--navy);
+        color: white;
+      }
+
+      .calendar-day.has-event {
+        background: rgba(212, 160, 18, 0.2);
+        color: var(--navy);
+        font-weight: 700;
+      }
+
+      .calendar-day.today {
+        background: var(--gold);
+        color: var(--navy);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header
+      id="header"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <a
+            href="#"
+            onclick="showSection('home')"
+            class="flex items-center gap-3"
+          >
+            <!-- REPLACED: Logo Image -->
+            <div
+              class="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center bg-white border border-gold-500 shadow-sm"
+            >
+              <img
+                src="https://z-cdn-media.chatglm.cn/files/c22c7e47-c4fb-4912-b04b-18e785b6b60d.png?auth_key=1872902018-a70119b2d200494ba28e7c68c4296c9d-0-3acdf289ba48628b5547dfd24f145aa9"
+                alt="Nifty Steps School Logo"
+                class="w-full h-full object-contain p-1"
+              />
+            </div>
+            <div>
+              <span class="font-display text-xl font-bold text-navy-900"
+                >Nifty Steps School</span
+              >
+              <span class="block text-xs text-navy-600 tracking-wider"
+                >Crescat Scientia; Vita Excolatur</span
+              >
+            </div>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden lg:flex items-center gap-8">
+            <button
+              onclick="showSection('home')"
+              class="nav-link active"
+              data-section="home"
+            >
+              Home
+            </button>
+            <button
+              onclick="showSection('about')"
+              class="nav-link"
+              data-section="about"
+            >
+              About
+            </button>
+            <button
+              onclick="showSection('academics')"
+              class="nav-link"
+              data-section="academics"
+            >
+              Academics
+            </button>
+            <button
+              onclick="showSection('admission')"
+              class="nav-link"
+              data-section="admission"
+            >
+              Admission
+            </button>
+            <button
+              onclick="showSection('gallery')"
+              class="nav-link"
+              data-section="gallery"
+            >
+              Gallery
+            </button>
+            <button
+              onclick="showSection('news')"
+              class="nav-link"
+              data-section="news"
+            >
+              News
+            </button>
+            <button
+              onclick="showSection('contact')"
+              class="nav-link"
+              data-section="contact"
+            >
+              Contact
+            </button>
+            <button
+              onclick="showSection('extra')"
+              class="nav-link"
+              data-section="extra"
+            >
+              Extra
+            </button>
+          </nav>
+
+          <!-- CTA & Mobile Menu -->
+          <div class="flex items-center gap-4">
+            <button
+              onclick="openModal('portalModal')"
+              class="hidden sm:block btn-primary text-sm"
+            >
+              Student Portal
+            </button>
+            <button
+              onclick="toggleMobileMenu()"
+              class="lg:hidden p-2"
+              aria-label="Toggle menu"
+            >
+              <i data-lucide="menu" class="w-6 h-6 text-navy-900"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu">
+      <button
+        onclick="toggleMobileMenu()"
+        class="absolute top-6 right-6 p-2"
+        aria-label="Close menu"
+      >
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+      <nav class="flex flex-col gap-4">
+        <button
+          onclick="
+            showSection('home');
+            toggleMobileMenu();
+          "
+          class="text-left text-lg font-medium py-3 border-b border-gray-100"
+        >
+          Home
+        </button>
+        <button
+          onclick="
+            showSection('about');
+            toggleMobileMenu();
+          "
+          class="text-left text-lg font-medium py-3 border-b border-gray-100"
+        >
+          About
+        </button>
+        <button
+          onclick="
+            showSection('academics');
+            toggleMobileMenu();
+          "
+          class="text-left text-lg font-medium py-3 border-b border-gray-100"
+        >
+          Academics
+        </button>
+        <button
+          onclick="
+            showSection('admission');
+            toggleMobileMenu();
+          "
+          class="text-left text-lg font-medium py-3 border-b border-gray-100"
+        >
+          Admission
+        </button>
+        <button
+          onclick="
+            showSection('portals');
+            toggleMobileMenu();
+          "
+          class="text-left text-lg font-medium py-3 border-b border-gray-100"
+        >
+          Portals
+        </button>
+        <button
+          onclick="
+            showSection('elearning');
+            toggleMobileMenu();
+          "
+          class="text-left text-lg font-medium py-3 border-b border-gray-100"
+        >
+          E-Learning
+        </button>
+        <button
+          onclick="
+            showSection('gallery');
+            toggleMobileMenu();
+          "
+          class="text-left text-lg font-medium py-3 border-b border-gray-100"
+        >
+          Gallery
+        </button>
+        <button
+          onclick="
+            showSection('news');
+            toggleMobileMenu();
+          "
+          class="text-left text-lg font-medium py-3 border-b border-gray-100"
+        >
+          News
+        </button>
+        <button
+          onclick="
+            showSection('events');
+            toggleMobileMenu();
+          "
+          class="text-left text-lg font-medium py-3 border-b border-gray-100"
+        >
+          Events
+        </button>
+        <button
+          onclick="
+            showSection('contact');
+            toggleMobileMenu();
+          "
+          class="text-left text-lg font-medium py-3 border-b border-gray-100"
+        >
+          Contact
+        </button>
+        <button
+          onclick="
+            showSection('extra');
+            toggleMobileMenu();
+          "
+          class="text-left text-lg font-medium py-3 border-b border-gray-100"
+        >
+          Activities
+        </button>
+        <button
+          onclick="
+            openModal('portalModal');
+            toggleMobileMenu();
+          "
+          class="btn-primary mt-4 text-center"
+        >
+          Student Portal
+        </button>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <!-- HOME SECTION -->
+      <section id="home" class="section active">
+        <!-- Hero -->
+        <div class="hero-bg min-h-screen relative flex items-center">
+          <!-- Floating blobs -->
+          <div
+            class="blob w-96 h-96 bg-gold-400 top-20 -left-48 animate-blob"
+          ></div>
+          <div
+            class="blob w-80 h-80 bg-navy-400 bottom-20 right-0 animate-blob"
+            style="animation-delay: -4s"
+          ></div>
+
+          <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10"
+          >
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div
+                  class="animate-fade-in-up opacity-0"
+                  style="animation-delay: 0.1s"
+                >
+                  <span
+                    class="inline-block px-4 py-2 bg-gold-500/20 text-gold-400 rounded-full text-sm font-medium mb-6"
+                  >
+                    Admissions Open for 2025-2026
+                  </span>
+                </div>
+                <h1
+                  class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 animate-fade-in-up opacity-0"
+                  style="animation-delay: 0.2s"
+                >
+                  Nurturing Minds,<br />
+                  <span class="gradient-text">Building Futures</span>
+                </h1>
+                <p
+                  class="text-lg text-navy-200 mb-8 max-w-lg animate-fade-in-up opacity-0"
+                  style="animation-delay: 0.3s"
+                >
+                  At Nifty Steps School, we combine academic excellence with
+                  character development to prepare students for a rapidly
+                  changing world.
+                </p>
+                <div
+                  class="flex flex-wrap gap-4 animate-fade-in-up opacity-0"
+                  style="animation-delay: 0.4s"
+                >
+                  <button onclick="showSection('admission')" class="btn-gold">
+                    Apply Now
+                  </button>
+                  <button
+                    onclick="showSection('about')"
+                    class="btn-secondary border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-navy-900"
+                  >
+                    Learn More
+                  </button>
+                </div>
+
+                <!-- Quick Stats -->
+                <div
+                  class="grid grid-cols-3 gap-6 mt-12 animate-fade-in-up opacity-0"
+                  style="animation-delay: 0.5s"
+                >
+                  <div>
+                    <div
+                      class="text-3xl font-bold text-gold-400"
+                      data-count="1500"
+                    >
+                      0
+                    </div>
+                    <div class="text-sm text-navy-300">Students</div>
+                  </div>
+                  <div>
+                    <div
+                      class="text-3xl font-bold text-gold-400"
+                      data-count="120"
+                    >
+                      0
+                    </div>
+                    <div class="text-sm text-navy-300">Expert Teachers</div>
+                  </div>
+                  <div>
+                    <div
+                      class="text-3xl font-bold text-gold-400"
+                      data-count="98"
+                    >
+                      0
+                    </div>
+                    <div class="text-sm text-navy-300">% Pass Rate</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hero Image/Card -->
+              <div
+                class="relative animate-fade-in-up opacity-0"
+                style="animation-delay: 0.4s"
+              >
+                <div
+                  class="relative bg-white/10 backdrop-blur-lg rounded-3xl p-6 border border-white/20"
+                >
+                  <div
+                    class="aspect-video bg-gradient-to-br from-navy-700 to-navy-900 rounded-2xl overflow-hidden relative"
+                  >
+                    <!-- School illustration -->
+                    <div
+                      class="aspect-video bg-gradient-to-br from-navy-700 to-navy-900 rounded-2xl overflow-hidden relative"
+                    >
+                      <!-- REPLACED: Hero School Image -->
+                      <img
+                        src="img/sch.jpeg"
+                        alt="Nifty Steps School Campus"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div class="mt-4 flex items-center justify-between">
+                    <div>
+                      <h3 class="font-display text-lg font-bold text-white">
+                        Welcome to Nifty Steps
+                      </h3>
+                      <p class="text-sm text-navy-200">Est. 2008</p>
+                    </div>
+                    <div class="flex -space-x-3">
+                      <div
+                        class="w-10 h-10 rounded-full bg-gold-500 flex items-center justify-center text-navy-900 font-bold text-sm border-2 border-navy-800"
+                      >
+                        A+
+                      </div>
+                      <div
+                        class="w-10 h-10 rounded-full bg-navy-600 flex items-center justify-center text-gold-400 font-bold text-sm border-2 border-navy-800"
+                      >
+                        Top
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Floating cards -->
+                <div
+                  class="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-xl animate-float"
+                >
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center"
+                    >
+                      <i data-lucide="award" class="w-6 h-6 text-green-600"></i>
+                    </div>
+                    <div>
+                      <div class="font-bold text-navy-900">Best School</div>
+                      <div class="text-xs text-gray-500">Award 2024</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-xl animate-float"
+                  style="animation-delay: -3s"
+                >
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="w-12 h-12 bg-gold-100 rounded-xl flex items-center justify-center"
+                    >
+                      <i data-lucide="users" class="w-6 h-6 text-gold-600"></i>
+                    </div>
+                    <div>
+                      <div class="font-bold text-navy-900">1500+</div>
+                      <div class="text-xs text-gray-500">Happy Students</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scroll indicator -->
+          <div
+            class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
+          >
+            <i data-lucide="chevron-down" class="w-8 h-8 text-gold-400"></i>
+          </div>
+        </div>
+
+        <!-- Principal Welcome -->
+        <div class="py-20 bg-cream relative overflow-hidden">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+              <div class="reveal">
+                <div class="relative">
+                  <div
+                    class="aspect-[4/5] max-w-md mx-auto bg-gradient-to-br from-navy-800 to-navy-900 rounded-3xl overflow-hidden"
+                  >
+                    <!-- REPLACED: Principal Image -->
+                    <img
+                      src="img/Rev-Samuel-Oladeji-Egwaoje-PhD222by291.jpg"
+                      alt="Rev. Samuel Oladeji Egwaoje, PhD"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div
+                    class="absolute -bottom-4 -right-4 bg-gold-500 text-navy-900 px-6 py-3 rounded-2xl font-bold shadow-lg"
+                  >
+                    Rev. Samuel Oladeji Egwaoje, PhD
+                  </div>
+                </div>
+              </div>
+              <div class="reveal">
+                <span
+                  class="text-gold-600 font-semibold uppercase tracking-wider"
+                  >Welcome Message</span
+                >
+                <h2
+                  class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mt-3 mb-6"
+                >
+                  A Message from Our Proprietor
+                </h2>
+                <p class="text-navy-600 text-lg mb-4">
+                  "Education is not just about academics; it's about nurturing
+                  the whole child. At Nifty Steps School, we believe every
+                  student has unique potential waiting to be discovered."
+                </p>
+                <p class="text-navy-600 mb-6">
+                  With over 35 years of educational excellence, our school has
+                  built a legacy of producing well-rounded individuals who excel
+                  in their chosen fields. Our dedicated faculty,
+                  state-of-the-art facilities, and comprehensive curriculum
+                  ensure that every child receives the best possible start in
+                  life.
+                </p>
+                <button onclick="showSection('about')" class="btn-primary">
+                  Read Full Message
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="py-20 bg-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+              <span class="text-gold-600 font-semibold uppercase tracking-wider"
+                >Quick Access</span
+              >
+              <h2
+                class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mt-3"
+              >
+                What Would You Like to Do?
+              </h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <button
+                onclick="showSection('admission')"
+                class="card p-6 text-left reveal hover:border-gold-500"
+              >
+                <div
+                  class="w-14 h-14 bg-navy-100 rounded-2xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110"
+                >
+                  <i data-lucide="file-text" class="w-7 h-7 text-navy-700"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy-900 mb-2">
+                  Apply for Admission
+                </h3>
+                <p class="text-navy-600 text-sm">
+                  Start your journey with us today
+                </p>
+              </button>
+              <button
+                onclick="openModal('portalModal')"
+                class="card p-6 text-left reveal hover:border-gold-500"
+              >
+                <div
+                  class="w-14 h-14 bg-gold-100 rounded-2xl flex items-center justify-center mb-4"
+                >
+                  <i data-lucide="monitor" class="w-7 h-7 text-gold-600"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy-900 mb-2">
+                  Student Portal
+                </h3>
+                <p class="text-navy-600 text-sm">
+                  Access your dashboard and results
+                </p>
+              </button>
+              <button
+                onclick="showSection('elearning')"
+                class="card p-6 text-left reveal hover:border-gold-500"
+              >
+                <div
+                  class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mb-4"
+                >
+                  <i data-lucide="book-open" class="w-7 h-7 text-green-600"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy-900 mb-2">
+                  E-Learning
+                </h3>
+                <p class="text-navy-600 text-sm">
+                  Access online learning resources
+                </p>
+              </button>
+              <button
+                onclick="showSection('contact')"
+                class="card p-6 text-left reveal hover:border-gold-500"
+              >
+                <div
+                  class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-4"
+                >
+                  <i data-lucide="phone" class="w-7 h-7 text-blue-600"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy-900 mb-2">
+                  Contact Us
+                </h3>
+                <p class="text-navy-600 text-sm">Get in touch with our team</p>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- News & Announcements -->
+        <div class="py-20 bg-cream">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-between items-end gap-6 mb-12">
+              <div class="reveal">
+                <span
+                  class="text-gold-600 font-semibold uppercase tracking-wider"
+                  >Stay Updated</span
+                >
+                <h2
+                  class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mt-3"
+                >
+                  Latest News & Announcements
+                </h2>
+              </div>
+              <button
+                onclick="showSection('news')"
+                class="btn-secondary reveal"
+              >
+                View All News
+              </button>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="newsGrid">
+              <!-- News items will be populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming Events -->
+        <div class="py-20 bg-navy-900 text-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-between items-end gap-6 mb-12">
+              <div class="reveal">
+                <span
+                  class="text-gold-400 font-semibold uppercase tracking-wider"
+                  >Mark Your Calendar</span
+                >
+                <h2 class="font-display text-3xl sm:text-4xl font-bold mt-3">
+                  Upcoming Events
+                </h2>
+              </div>
+              <button onclick="showSection('events')" class="btn-gold reveal">
+                View All Events
+              </button>
+            </div>
+            <div
+              class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+              id="eventsGrid"
+            >
+              <!-- Events will be populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="py-20 bg-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+              <span class="text-gold-600 font-semibold uppercase tracking-wider"
+                >Our Pride</span
+              >
+              <h2
+                class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mt-3"
+              >
+                Achievements & Recognition
+              </h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="card p-8 text-center reveal">
+                <div
+                  class="w-20 h-20 mx-auto bg-gradient-to-br from-gold-400 to-gold-600 rounded-2xl flex items-center justify-center mb-4"
+                >
+                  <i data-lucide="trophy" class="w-10 h-10 text-white"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy-900 mb-2">
+                  Best School Award
+                </h3>
+                <p class="text-navy-600">
+                  National Education Excellence Award 2024
+                </p>
+              </div>
+              <div class="card p-8 text-center reveal">
+                <div
+                  class="w-20 h-20 mx-auto bg-gradient-to-br from-navy-700 to-navy-900 rounded-2xl flex items-center justify-center mb-4"
+                >
+                  <i data-lucide="medal" class="w-10 h-10 text-white"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy-900 mb-2">
+                  Sports Champions
+                </h3>
+                <p class="text-navy-600">
+                  Inter-State Athletics Championship 2024
+                </p>
+              </div>
+              <div class="card p-8 text-center reveal">
+                <div
+                  class="w-20 h-20 mx-auto bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center mb-4"
+                >
+                  <i data-lucide="leaf" class="w-10 h-10 text-white"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy-900 mb-2">
+                  Green School
+                </h3>
+                <p class="text-navy-600">Eco-Friendly Campus Certification</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section id="about" class="section">
+        <div class="bg-gradient-to-br from-navy-900 to-navy-800 py-20">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center reveal">
+              <span class="text-gold-400 font-semibold uppercase tracking-wider"
+                >About Us</span
+              >
+              <h1
+                class="font-display text-4xl sm:text-5xl font-bold text-white mt-3"
+              >
+                Our Story & Mission
+              </h1>
+            </div>
+          </div>
+        </div>
+
+        <!-- History -->
+        <div class="py-20 bg-cream">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+              <div class="reveal">
+                <span
+                  class="text-gold-600 font-semibold uppercase tracking-wider"
+                  >Since 2008</span
+                >
+                <h2
+                  class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mt-3 mb-6"
+                >
+                  Our History
+                </h2>
+                <div class="space-y-4 text-navy-700">
+                  <p>
+                    Nifty Steps School started operation in October 2008 with
+                    the objective to provide a unique form of education to the
+                    Nigerian children. Our population has grown steadily from
+                    just five pupils and three teachers in the kindergarten
+                    class in 2008, to a current figure of 155 pupils and 21
+                    teachers. Over 85% of these teachers are either NCE graduate
+                    or hold a degree in Education. Three others are currently in
+                    the middle of their NCE certification course.
+                  </p>
+                  <p>
+                    Our Motto, crescat scienta vita excolatur, which is Latin
+                    for Ã¢â‚¬Å“let knowledge grow; let life increase,Ã¢â‚¬Â
+                    underpins our earnest desire to provide an education
+                    designed to enable our children to discover their strengths,
+                    and to make the most of their talents in life.
+                  </p>
+                  <p>
+                    The held belief at Steps School is that when a child is
+                    carefully guided, he/she can begin, even at tender age, to
+                    tap on the inner resources that can lead to achieving
+                    his/her full life potentials. It is no wonder that our
+                    pioneer pupils who are now in Primary 1, are not only
+                    articulate in mathematics but are also today well able to
+                    read, even newspapers, as well as write in simple sentences.
+                    We have since 2008 established so good a testimonial that
+                    many parents have mounted pressure on us to enroll children
+                    in higher classes beyond the level of our pioneer pupils. We
+                    now run classes up to Primary 4.
+                  </p>
+                </div>
+              </div>
+              <div class="reveal">
+                <div class="timeline space-y-8">
+                  <div class="timeline-item">
+                    <h4 class="font-bold text-navy-900">April 21, 2008</h4>
+                    <p class="text-navy-600 text-sm">
+                      School is registered as Steps Primary and Secondary
+                      School, with the Corporate Affairs Commission (CAC).
+                    </p>
+                  </div>
+                  <div class="timeline-item">
+                    <h4 class="font-bold text-navy-900">October 20, 2008</h4>
+                    <p class="text-navy-600 text-sm">
+                      Formally commenced classes with with two teachers, four
+                      Kindergarten (KG 1) toddlers, and one Primary 1 pupil.
+                    </p>
+                  </div>
+                  <div class="timeline-item">
+                    <h4 class="font-bold text-navy-900">March 6, 2012</h4>
+                    <p class="text-navy-600 text-sm">
+                      Registered the school as Nifty Steps Primary School with
+                      the Lagos State Ministry of Education.
+                    </p>
+                  </div>
+                  <div class="timeline-item">
+                    <h4 class="font-bold text-navy-900">March 17, 2015</h4>
+                    <p class="text-navy-600 text-sm">
+                      Granted approval to present students for BECE (JSS3 exam).
+                    </p>
+                  </div>
+                  <div class="timeline-item">
+                    <h4 class="font-bold text-navy-900">October 15, 2015</h4>
+                    <p class="text-navy-600 text-sm">
+                      Re-registered the school as Nifty Steps Primary School and
+                      College with the Corporate Affairs Commission.
+                    </p>
+                  </div>
+                  <div class="timeline-item">
+                    <h4 class="font-bold text-navy-900">August 20, 2018</h4>
+                    <p class="text-navy-600 text-sm">
+                      Received formal letters of approval from the Lagos State
+                      Government, enabling Nifty Steps School to internally
+                      present students for WASC and NECO, as well as the primary
+                      Six Leaving Certificate.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mission, Vision, Values -->
+        <div class="py-20 bg-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+              <div class="card p-8 reveal">
+                <div
+                  class="w-16 h-16 bg-navy-100 rounded-2xl flex items-center justify-center mb-6"
+                >
+                  <i data-lucide="target" class="w-8 h-8 text-navy-700"></i>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-navy-900 mb-4">
+                  Our Mission
+                </h3>
+                <p class="text-navy-600">
+                  To provide a unique and distinctive education aimed at
+                  moulding each pupil to be a self-confident, inquiring,
+                  positive and tolerant person with a well-rounded character and
+                  an independent mind which will enable the child stand up for
+                  himself/herself and be of value to the larger community.
+                </p>
+              </div>
+              <div class="card p-8 reveal">
+                <div
+                  class="w-16 h-16 bg-gold-100 rounded-2xl flex items-center justify-center mb-6"
+                >
+                  <i data-lucide="eye" class="w-8 h-8 text-gold-600"></i>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-navy-900 mb-4">
+                  Our Vision
+                </h3>
+                <p class="text-navy-600">
+                  To be the school of first choice anywhere we operate,
+                  positively shaping the consciousness of our students to
+                  consistently stand up in their communities as individuals who
+                  contribute immensely to humanity.
+                </p>
+              </div>
+              <div class="card p-8 reveal">
+                <div
+                  class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6"
+                >
+                  <i data-lucide="heart" class="w-8 h-8 text-green-600"></i>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-navy-900 mb-4">
+                  Core Values
+                </h3>
+                <ul class="text-navy-600 space-y-2">
+                  <li class="flex items-center gap-2">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-5 h-5 text-green-500"
+                    ></i>
+                    Clarity
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-5 h-5 text-green-500"
+                    ></i>
+                    Collaboration
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-5 h-5 text-green-500"
+                    ></i>
+                    Respect
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-5 h-5 text-green-500"
+                    ></i>
+                    Thoroughness
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-5 h-5 text-green-500"
+                    ></i>
+                    Tolerance
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-5 h-5 text-green-500"
+                    ></i>
+                    Transparency
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leadership Team -->
+        <div class="py-20 bg-cream">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+              <span class="text-gold-600 font-semibold uppercase tracking-wider"
+                >Our Team</span
+              >
+              <h2
+                class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mt-3"
+              >
+                School Leadership
+              </h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="card p-6 text-center reveal">
+                <!-- REPLACED: Leader Image -->
+                <div
+                  class="w-24 h-24 mx-auto bg-navy-100 rounded-full flex items-center justify-center mb-4 overflow-hidden"
+                >
+                  <img
+                    src="img/Rev-Samuel-Oladeji-Egwaoje-PhD222by291.jpg"
+                    alt="Rev. Samuel Oladeji Egwaoje"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="font-display text-lg font-bold text-navy-900">
+                  Rev. Samuel Oladeji Egwaoje, PhD
+                </h3>
+                <p class="text-gold-600 font-medium text-sm">Proprietor</p>
+                <p class="text-navy-600 text-sm mt-2">
+                  Ph.D. in Education, 25+ years experience
+                </p>
+              </div>
+              <div class="card p-6 text-center reveal">
+                <div
+                  class="w-24 h-24 mx-auto bg-navy-100 rounded-full flex items-center justify-center mb-4 overflow-hidden"
+                >
+                  <img
+                    src="img/Mr-Ohioma-O-Egwaoje.jpg"
+                    alt="Rev. Samuel Oladeji Egwaoje"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="font-display text-lg font-bold text-navy-900">
+                  Mr. Ohioma O. Egwaoje
+                </h3>
+                <p class="text-gold-600 font-medium text-sm">CEO</p>
+                <p class="text-navy-600 text-sm mt-2">
+                  M.Ed., 20+ years experience
+                </p>
+              </div>
+              <div class="card p-6 text-center reveal">
+                <div
+                  class="w-24 h-24 mx-auto bg-navy-100 rounded-full flex items-center justify-center mb-4 overflow-hidden"
+                >
+                  <img
+                    src="img/02Mrs-Olivia-Abaram-Orji-BSc-Mathematics-Vice-Principal-College.jpg"
+                    alt="Rev. Samuel Oladeji Egwaoje"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="font-display text-lg font-bold text-navy-900">
+                  Mrs. Olivia Abaram-Orji
+                </h3>
+                <p class="text-gold-600 font-medium text-sm">Head of Primary</p>
+                <p class="text-navy-600 text-sm mt-2">BSc Mathematics</p>
+              </div>
+              <div class="card p-6 text-center reveal">
+                <div
+                  class="w-24 h-24 mx-auto bg-navy-100 rounded-full flex items-center justify-center mb-4 overflow-hidden"
+                >
+                  <img
+                    src="img/01Mr-Mufutau-Odunola-Bello-BSc-Agricultue-PGDE-Principal-College.jpg"
+                    alt="Mr. Mufutau Odunola Bello"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="font-display text-lg font-bold text-navy-900">
+                  Mr. Mufutau Odunola Bello
+                </h3>
+                <p class="text-gold-600 font-medium text-sm">
+                  Head of Secondary
+                </p>
+                <p class="text-navy-600 text-sm mt-2">BSc Agriculture, PGDE</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACADEMICS SECTION -->
+      <section id="academics" class="section">
+        <div class="bg-gradient-to-br from-navy-900 to-navy-800 py-20">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center reveal">
+              <span class="text-gold-400 font-semibold uppercase tracking-wider"
+                >Academic Programs</span
+              >
+              <h1
+                class="font-display text-4xl sm:text-5xl font-bold text-white mt-3"
+              >
+                Excellence in Learning
+              </h1>
+            </div>
+          </div>
+        </div>
+
+        <!-- Primary & Secondary -->
+        <div class="py-20 bg-cream">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-8">
+              <!-- Primary -->
+              <div class="card p-8 reveal">
+                <div class="flex items-center gap-4 mb-6">
+                  <div
+                    class="w-16 h-16 bg-gradient-to-br from-gold-400 to-gold-600 rounded-2xl flex items-center justify-center"
+                  >
+                    <i data-lucide="baby" class="w-8 h-8 text-white"></i>
+                  </div>
+                  <div>
+                    <h2 class="font-display text-2xl font-bold text-navy-900">
+                      Primary School
+                    </h2>
+                    <p class="text-navy-600">Grades 1 - 6</p>
+                  </div>
+                </div>
+                <p class="text-navy-600 mb-6">
+                  Our primary school program focuses on building strong
+                  foundations in literacy, numeracy, and critical thinking. We
+                  create a nurturing environment where young learners develop
+                  curiosity and a love for learning.
+                </p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div class="bg-navy-50 p-4 rounded-xl">
+                    <div class="font-bold text-navy-900">500+</div>
+                    <div class="text-sm text-navy-600">Students</div>
+                  </div>
+                  <div class="bg-navy-50 p-4 rounded-xl">
+                    <div class="font-bold text-navy-900">40+</div>
+                    <div class="text-sm text-navy-600">Teachers</div>
+                  </div>
+                </div>
+                <h4 class="font-bold text-navy-900 mb-3">Key Subjects</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 bg-white border border-navy-200 rounded-full text-sm"
+                    >English</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-white border border-navy-200 rounded-full text-sm"
+                    >Mathematics</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-white border border-navy-200 rounded-full text-sm"
+                    >Science</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-white border border-navy-200 rounded-full text-sm"
+                    >Social Studies</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-white border border-navy-200 rounded-full text-sm"
+                    >Art</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-white border border-navy-200 rounded-full text-sm"
+                    >Music</span
+                  >
+                </div>
+              </div>
+
+              <!-- Secondary -->
+              <div class="card p-8 reveal">
+                <div class="flex items-center gap-4 mb-6">
+                  <div
+                    class="w-16 h-16 bg-gradient-to-br from-navy-700 to-navy-900 rounded-2xl flex items-center justify-center"
+                  >
+                    <i
+                      data-lucide="graduation-cap"
+                      class="w-8 h-8 text-white"
+                    ></i>
+                  </div>
+                  <div>
+                    <h2 class="font-display text-2xl font-bold text-navy-900">
+                      Secondary School
+                    </h2>
+                    <p class="text-navy-600">Grades 7 - 12</p>
+                  </div>
+                </div>
+                <p class="text-navy-600 mb-6">
+                  Our secondary program prepares students for higher education
+                  and future careers. We offer comprehensive curricula with
+                  specialized streams in Science, Commerce, and Humanities.
+                </p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div class="bg-navy-50 p-4 rounded-xl">
+                    <div class="font-bold text-navy-900">1000+</div>
+                    <div class="text-sm text-navy-600">Students</div>
+                  </div>
+                  <div class="bg-navy-50 p-4 rounded-xl">
+                    <div class="font-bold text-navy-900">80+</div>
+                    <div class="text-sm text-navy-600">Teachers</div>
+                  </div>
+                </div>
+                <h4 class="font-bold text-navy-900 mb-3">Streams Available</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 bg-gold-100 border border-gold-300 rounded-full text-sm font-medium"
+                    >Science</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-gold-100 border border-gold-300 rounded-full text-sm font-medium"
+                    >Commerce</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-gold-100 border border-gold-300 rounded-full text-sm font-medium"
+                    >Art</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Curriculum -->
+        <div class="py-20 bg-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+              <span class="text-gold-600 font-semibold uppercase tracking-wider"
+                >Our Approach</span
+              >
+              <h2
+                class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mt-3"
+              >
+                Curriculum Overview
+              </h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="text-center reveal">
+                <div
+                  class="w-20 h-20 mx-auto bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mb-4"
+                >
+                  <i data-lucide="book" class="w-10 h-10 text-white"></i>
+                </div>
+                <h3 class="font-display text-lg font-bold text-navy-900">
+                  National Curriculum
+                </h3>
+                <p class="text-navy-600 text-sm mt-2">
+                  Aligned with national education standards
+                </p>
+              </div>
+              <div class="text-center reveal">
+                <div
+                  class="w-20 h-20 mx-auto bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-4"
+                >
+                  <i data-lucide="cpu" class="w-10 h-10 text-white"></i>
+                </div>
+                <h3 class="font-display text-lg font-bold text-navy-900">
+                  STEM Focus
+                </h3>
+                <p class="text-navy-600 text-sm mt-2">
+                  Science, Technology, Engineering, Math
+                </p>
+              </div>
+              <div class="text-center reveal">
+                <div
+                  class="w-20 h-20 mx-auto bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mb-4"
+                >
+                  <i data-lucide="palette" class="w-10 h-10 text-white"></i>
+                </div>
+                <h3 class="font-display text-lg font-bold text-navy-900">
+                  Arts & Culture
+                </h3>
+                <p class="text-navy-600 text-sm mt-2">
+                  Music, drama, visual arts programs
+                </p>
+              </div>
+              <div class="text-center reveal">
+                <div
+                  class="w-20 h-20 mx-auto bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mb-4"
+                >
+                  <i data-lucide="dumbbell" class="w-10 h-10 text-white"></i>
+                </div>
+                <h3 class="font-display text-lg font-bold text-navy-900">
+                  Sports & Fitness
+                </h3>
+                <p class="text-navy-600 text-sm mt-2">
+                  Comprehensive physical education
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic Calendar -->
+        <div class="py-20 bg-cream">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+              <span class="text-gold-600 font-semibold uppercase tracking-wider"
+                >2024-2025</span
+              >
+              <h2
+                class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mt-3"
+              >
+                Academic Calendar
+              </h2>
+            </div>
+            <div class="max-w-3xl mx-auto reveal">
+              <div class="card p-6 space-y-4">
+                <div
+                  class="flex justify-between items-center py-3 border-b border-navy-100"
+                >
+                  <div>
+                    <h4 class="font-bold text-navy-900">First Term</h4>
+                    <p class="text-sm text-navy-600">September - December</p>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm"
+                    >Current</span
+                  >
+                </div>
+                <div
+                  class="flex justify-between items-center py-3 border-b border-navy-100"
+                >
+                  <div>
+                    <h4 class="font-bold text-navy-900">Winter Break</h4>
+                    <p class="text-sm text-navy-600">December 20 - January 5</p>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm"
+                    >Upcoming</span
+                  >
+                </div>
+                <div
+                  class="flex justify-between items-center py-3 border-b border-navy-100"
+                >
+                  <div>
+                    <h4 class="font-bold text-navy-900">Second Term</h4>
+                    <p class="text-sm text-navy-600">January - April</p>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-navy-100 text-navy-700 rounded-full text-sm"
+                    >Scheduled</span
+                  >
+                </div>
+                <div
+                  class="flex justify-between items-center py-3 border-b border-navy-100"
+                >
+                  <div>
+                    <h4 class="font-bold text-navy-900">Spring Break</h4>
+                    <p class="text-sm text-navy-600">April 10 - April 20</p>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-navy-100 text-navy-700 rounded-full text-sm"
+                    >Scheduled</span
+                  >
+                </div>
+                <div class="flex justify-between items-center py-3">
+                  <div>
+                    <h4 class="font-bold text-navy-900">Third Term</h4>
+                    <p class="text-sm text-navy-600">April - June</p>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-navy-100 text-navy-700 rounded-full text-sm"
+                    >Scheduled</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ADMISSION SECTION -->
+      <section id="admission" class="section">
+        <div class="bg-gradient-to-br from-navy-900 to-navy-800 py-20">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center reveal">
+              <span class="text-gold-400 font-semibold uppercase tracking-wider"
+                >Join Our Family</span
+              >
+              <h1
+                class="font-display text-4xl sm:text-5xl font-bold text-white mt-3"
+              >
+                Admissions 2025-2026
+              </h1>
+              <p class="text-navy-200 mt-4 max-w-2xl mx-auto">
+                Begin your child's journey to excellence. Applications are now
+                open for the upcoming academic year.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Admission Form -->
+        <div class="py-20 bg-cream">
+          <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="card p-8 reveal">
+              <h2 class="font-display text-2xl font-bold text-navy-900 mb-6">
+                Online Admission Form
+              </h2>
+              <form id="admissionForm" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label class="form-label">Student First Name *</label>
+                    <input
+                      type="text"
+                      class="form-input"
+                      required
+                      placeholder="Enter first name"
+                    />
+                  </div>
+                  <div>
+                    <label class="form-label">Student Last Name *</label>
+                    <input
+                      type="text"
+                      class="form-input"
+                      required
+                      placeholder="Enter last name"
+                    />
+                  </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label class="form-label">Date of Birth *</label>
+                    <input type="date" class="form-input" required />
+                  </div>
+                  <div>
+                    <label class="form-label">Gender *</label>
+                    <select class="form-input" required>
+                      <option value="">Select Gender</option>
+                      <option>Male</option>
+                      <option>Female</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label class="form-label">Applying for Grade *</label>
+                  <select class="form-input" required>
+                    <option value="">Select Grade</option>
+                    <option>Grade 1</option>
+                    <option>Grade 2</option>
+                    <option>Grade 3</option>
+                    <option>Grade 4</option>
+                    <option>Grade 5</option>
+                    <option>Grade 6</option>
+                    <option>Grade 7</option>
+                    <option>Grade 8</option>
+                    <option>Grade 9</option>
+                    <option>Grade 10</option>
+                    <option>Grade 11</option>
+                    <option>Grade 12</option>
+                  </select>
+                </div>
+                <div class="border-t border-navy-100 pt-6 mt-6">
+                  <h3 class="font-bold text-navy-900 mb-4">
+                    Parent/Guardian Information
+                  </h3>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label class="form-label">Parent/Guardian Name *</label>
+                    <input
+                      type="text"
+                      class="form-input"
+                      required
+                      placeholder="Full name"
+                    />
+                  </div>
+                  <div>
+                    <label class="form-label">Relationship *</label>
+                    <select class="form-input" required>
+                      <option value="">Select</option>
+                      <option>Father</option>
+                      <option>Mother</option>
+                      <option>Guardian</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label class="form-label">Email Address *</label>
+                    <input
+                      type="email"
+                      class="form-input"
+                      required
+                      placeholder="email@example.com"
+                    />
+                  </div>
+                  <div>
+                    <label class="form-label">Phone Number *</label>
+                    <input
+                      type="tel"
+                      class="form-input"
+                      required
+                      placeholder="+1 234 567 8900"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label class="form-label">Home Address *</label>
+                  <textarea
+                    class="form-input"
+                    rows="3"
+                    required
+                    placeholder="Full address"
+                  ></textarea>
+                </div>
+                <div>
+                  <label class="form-label">Previous School (if any)</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    placeholder="School name"
+                  />
+                </div>
+                <div class="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="terms"
+                    class="mt-1 w-5 h-5 rounded border-navy-300 text-gold-500 focus:ring-gold-500"
+                    required
+                  />
+                  <label for="terms" class="text-sm text-navy-600">
+                    I confirm that the information provided is accurate and I
+                    agree to the school's admission policies and terms.
+                  </label>
+                </div>
+                <button type="submit" class="btn-primary w-full">
+                  Submit Application
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Requirements -->
+        <div class="py-20 bg-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+              <div class="reveal">
+                <span
+                  class="text-gold-600 font-semibold uppercase tracking-wider"
+                  >Documents Needed</span
+                >
+                <h2
+                  class="font-display text-3xl font-bold text-navy-900 mt-3 mb-6"
+                >
+                  Admission Requirements
+                </h2>
+                <ul class="space-y-4">
+                  <li class="flex items-start gap-3">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-6 h-6 text-green-500 mt-0.5"
+                    ></i>
+                    <div>
+                      <h4 class="font-bold text-navy-900">Birth Certificate</h4>
+                      <p class="text-navy-600 text-sm">
+                        Original and photocopy
+                      </p>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-6 h-6 text-green-500 mt-0.5"
+                    ></i>
+                    <div>
+                      <h4 class="font-bold text-navy-900">
+                        Previous School Records
+                      </h4>
+                      <p class="text-navy-600 text-sm">
+                        Report cards from last 2 years
+                      </p>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-6 h-6 text-green-500 mt-0.5"
+                    ></i>
+                    <div>
+                      <h4 class="font-bold text-navy-900">Passport Photos</h4>
+                      <p class="text-navy-600 text-sm">
+                        4 recent passport-sized photos
+                      </p>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-6 h-6 text-green-500 mt-0.5"
+                    ></i>
+                    <div>
+                      <h4 class="font-bold text-navy-900">Medical Records</h4>
+                      <p class="text-navy-600 text-sm">
+                        Immunization records and health certificate
+                      </p>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-6 h-6 text-green-500 mt-0.5"
+                    ></i>
+                    <div>
+                      <h4 class="font-bold text-navy-900">
+                        ID Proof of Parents
+                      </h4>
+                      <p class="text-navy-600 text-sm">Government-issued ID</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="reveal">
+                <span
+                  class="text-gold-600 font-semibold uppercase tracking-wider"
+                  >Fee Structure</span
+                >
+                <h2
+                  class="font-display text-3xl font-bold text-navy-900 mt-3 mb-6"
+                >
+                  School Fees 2025-2026
+                </h2>
+                <div class="space-y-4">
+                  <div class="card p-6">
+                    <div class="flex justify-between items-center">
+                      <div>
+                        <h4 class="font-bold text-navy-900">Primary School</h4>
+                        <p class="text-sm text-navy-600">Grades 1-6</p>
+                      </div>
+                      <div class="text-right">
+                        <div class="text-2xl font-bold text-gold-600">
+                          $3,500
+                        </div>
+                        <div class="text-sm text-navy-600">per year</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card p-6">
+                    <div class="flex justify-between items-center">
+                      <div>
+                        <h4 class="font-bold text-navy-900">Middle School</h4>
+                        <p class="text-sm text-navy-600">Grades 7-9</p>
+                      </div>
+                      <div class="text-right">
+                        <div class="text-2xl font-bold text-gold-600">
+                          $4,500
+                        </div>
+                        <div class="text-sm text-navy-600">per year</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card p-6">
+                    <div class="flex justify-between items-center">
+                      <div>
+                        <h4 class="font-bold text-navy-900">High School</h4>
+                        <p class="text-sm text-navy-600">Grades 10-12</p>
+                      </div>
+                      <div class="text-right">
+                        <div class="text-2xl font-bold text-gold-600">
+                          $5,500
+                        </div>
+                        <div class="text-sm text-navy-600">per year</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-sm text-navy-600 mt-4">
+                  * Fees include tuition, textbooks, and basic supplies.
+                  Additional fees may apply for transportation, meals, and
+                  extracurricular activities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Downloads -->
+        <div class="py-20 bg-cream">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+              <h2 class="font-display text-3xl font-bold text-navy-900">
+                Downloadable Documents
+              </h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div
+                class="card p-6 text-center reveal hover:border-gold-500 cursor-pointer"
+              >
+                <i
+                  data-lucide="file-text"
+                  class="w-12 h-12 mx-auto text-gold-600 mb-4"
+                ></i>
+                <h4 class="font-bold text-navy-900">Admission Form</h4>
+                <p class="text-sm text-navy-600">PDF, 250KB</p>
+              </div>
+              <div
+                class="card p-6 text-center reveal hover:border-gold-500 cursor-pointer"
+              >
+                <i
+                  data-lucide="file-text"
+                  class="w-12 h-12 mx-auto text-gold-600 mb-4"
+                ></i>
+                <h4 class="font-bold text-navy-900">Prospectus</h4>
+                <p class="text-sm text-navy-600">PDF, 1.2MB</p>
+              </div>
+              <div
+                class="card p-6 text-center reveal hover:border-gold-500 cursor-pointer"
+              >
+                <i
+                  data-lucide="file-text"
+                  class="w-12 h-12 mx-auto text-gold-600 mb-4"
+                ></i>
+                <h4 class="font-bold text-navy-900">Fee Structure</h4>
+                <p class="text-sm text-navy-600">PDF, 150KB</p>
+              </div>
+              <div
+                class="card p-6 text-center reveal hover:border-gold-500 cursor-pointer"
+              >
+                <i
+                  data-lucide="file-text"
+                  class="w-12 h-12 mx-auto text-gold-600 mb-4"
+                ></i>
+                <h4 class="font-bold text-navy-900">School Rules</h4>
+                <p class="text-sm text-navy-600">PDF, 300KB</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTALS SECTION -->
+      <section id="portals" class="section">
+        <div class="bg-gradient-to-br from-navy-900 to-navy-800 py-20">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center reveal">
+              <span class="text-gold-400 font-semibold uppercase tracking-wider"
+                >Access Your Portal</span
+              >
+              <h1
+                class="font-display text-4xl sm:text-5xl font-bold text-white mt-3"
+              >
+                School Portals
+              </h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="py-20 bg-cream">
+          <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Portal Tabs -->
+            <div class="flex flex-wrap gap-2 mb-0 reveal">
+              <button
+                class="portal-tab active"
+                onclick="switchPortalTab('student')"
+              >
+                Student Portal
+              </button>
+              <button class="portal-tab" onclick="switchPortalTab('teacher')">
+                Teacher Portal
+              </button>
+              <button class="portal-tab" onclick="switchPortalTab('parent')">
+                Parent Portal
+              </button>
+            </div>
+
+            <!-- Student Portal -->
+            <div id="studentPortal" class="portal-content card rounded-tl-none">
+              <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Login Form -->
+                <div
+                  class="p-8 border-b lg:border-b-0 lg:border-r border-navy-100"
+                >
+                  <h2
+                    class="font-display text-2xl font-bold text-navy-900 mb-6"
+                  >
+                    Student Login
+                  </h2>
+                  <form class="space-y-4">
+                    <div>
+                      <label class="form-label">Student ID</label>
+                      <input
+                        type="text"
+                        class="form-input"
+                        placeholder="Enter your student ID"
+                      />
+                    </div>
+                    <div>
+                      <label class="form-label">Password</label>
+                      <input
+                        type="password"
+                        class="form-input"
+                        placeholder="Enter your password"
+                      />
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <label class="flex items-center gap-2 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          class="w-4 h-4 rounded border-navy-300 text-gold-500"
+                        />
+                        <span class="text-sm text-navy-600">Remember me</span>
+                      </label>
+                      <a href="#" class="text-sm text-gold-600 hover:underline"
+                        >Forgot password?</a
+                      >
+                    </div>
+                    <button
+                      type="button"
+                      onclick="showStudentDashboard()"
+                      class="btn-primary w-full"
+                    >
+                      Login
+                    </button>
+                  </form>
+                </div>
+
+                <!-- Features -->
+                <div class="p-8">
+                  <h3 class="font-bold text-navy-900 mb-4">Portal Features</h3>
+                  <ul class="space-y-3">
+                    <li class="flex items-center gap-3">
+                      <i
+                        data-lucide="check-circle"
+                        class="w-5 h-5 text-green-500"
+                      ></i>
+                      <span class="text-navy-700"
+                        >View examination results</span
+                      >
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <i
+                        data-lucide="check-circle"
+                        class="w-5 h-5 text-green-500"
+                      ></i>
+                      <span class="text-navy-700">Access class timetable</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <i
+                        data-lucide="check-circle"
+                        class="w-5 h-5 text-green-500"
+                      ></i>
+                      <span class="text-navy-700"
+                        >Submit assignments online</span
+                      >
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <i
+                        data-lucide="check-circle"
+                        class="w-5 h-5 text-green-500"
+                      ></i>
+                      <span class="text-navy-700"
+                        >Check fee payment status</span
+                      >
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <i
+                        data-lucide="check-circle"
+                        class="w-5 h-5 text-green-500"
+                      ></i>
+                      <span class="text-navy-700"
+                        >Access e-learning resources</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Teacher Portal -->
+            <div
+              id="teacherPortal"
+              class="portal-content card rounded-tl-none hidden"
+            >
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div
+                  class="p-8 border-b lg:border-b-0 lg:border-r border-navy-100"
+                >
+                  <h2
+                    class="font-display text-2xl font-bold text-navy-900 mb-6"
+                  >
+                    Teacher Login
+                  </h2>
+                  <form class="space-y-4" onsubmit="handleTeacherLogin(event)">
+                    <div>
+                      <label class="form-label">First Name</label>
+                      <input
+                        type="text"
+                        id="teacherFirstName"
+                        class="form-input"
+                        placeholder="Enter first name"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label class="form-label">Last Name</label>
+                      <input
+                        type="text"
+                        id="teacherLastName"
+                        class="form-input"
+                        placeholder="Enter last name"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label class="form-label">Password</label>
+                      <input
+                        type="password"
+                        id="teacherPassword"
+                        class="form-input"
+                        placeholder="Enter your password"
+                        required
+                      />
+                    </div>
+                    <button type="submit" class="btn-primary w-full">
+                      Login
+                    </button>
+                  </form>
+                </div>
+                <div class="p-8">
+                  <h3 class="font-bold text-navy-900 mb-4">Teacher Features</h3>
+                  <ul class="space-y-3">
+                    <li class="flex items-center gap-3">
+                      <i
+                        data-lucide="check-circle"
+                        class="w-5 h-5 text-green-500"
+                      ></i>
+                      <span class="text-navy-700">Upload student results</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <i
+                        data-lucide="check-circle"
+                        class="w-5 h-5 text-green-500"
+                      ></i>
+                      <span class="text-navy-700"
+                        >Create and assign homework</span
+                      >
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <i
+                        data-lucide="check-circle"
+                        class="w-5 h-5 text-green-500"
+                      ></i>
+                      <span class="text-navy-700">Manage student records</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <i
+                        data-lucide="check-circle"
+                        class="w-5 h-5 text-green-500"
+                      ></i>
+                      <span class="text-navy-700"
+                        >Upload learning materials</span
+                      >
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <i
+                        data-lucide="check-circle"
+                        class="w-5 h-5 text-green-500"
+                      ></i>
+                      <span class="text-navy-700">View teaching schedule</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Parent Portal -->
+            <div
+              id="parentPortal"
+              class="portal-content card rounded-tl-none hidden"
+            >
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div
+                  class="p-8 border-b lg:border-b-0 lg:border-r border-navy-100"
+                >
+                  <h2
+                    class="font-display text-2xl font-bold text-navy-900 mb-6"
+                  >
+                    Parent Login
+                  </h2>
+                  <form class="space-y-4">
+                    <div>
+                      <label class="form-label">Registered Email</label>
+                      <input
+                        type="email"
+                        class="form-input"
+                        placeholder="Enter your email"
+                      />
+                    </div>
+                    <div>
+                      <label class="form-label">Password</label>
+                      <input
+                        type="password"
+                        class="form-input"
+                        placeholder="Enter your password"
+                      />
+                    </div>
+                    <button type="button" class="btn-primary w-full">
+                      Login
+                    </button>
+                  </form>
+                </div>
+                <div class="p-8">
+                  <h3 class="font-bold text-navy-900 mb-4">Parent Features</h3>
+                  <ul class="space-y-3">
+                    <li class="flex items-center gap-3">
+                      <i
+                        data-lucide="check-circle"
+                        class="w-5 h-5 text-green-500"
+                      ></i>
+                      <span class="text-navy-700"
+                        >Track child's performance</span
+                      >
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <i
+                        data-lucide="check-circle"
+                        class="w-5 h-5 text-green-500"
+                      ></i>
+                      <span class="text-navy-700">View attendance records</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <i
+                        data-lucide="check-circle"
+                        class="w-5 h-5 text-green-500"
+                      ></i>
+                      <span class="text-navy-700"
+                        >Check fee payment status</span
+                      >
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <i
+                        data-lucide="check-circle"
+                        class="w-5 h-5 text-green-500"
+                      ></i>
+                      <span class="text-navy-700">Receive announcements</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <i
+                        data-lucide="check-circle"
+                        class="w-5 h-5 text-green-500"
+                      ></i>
+                      <span class="text-navy-700"
+                        >Communicate with teachers</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- E-LEARNING SECTION -->
+      <section id="elearning" class="section">
+        <div class="bg-gradient-to-br from-navy-900 to-navy-800 py-20">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center reveal">
+              <span class="text-gold-400 font-semibold uppercase tracking-wider"
+                >Learn Anywhere</span
+              >
+              <h1
+                class="font-display text-4xl sm:text-5xl font-bold text-white mt-3"
+              >
+                E-Learning Platform
+              </h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="py-20 bg-cream">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8">
+              <!-- Video Lessons -->
+              <div class="lg:col-span-2 reveal">
+                <h2 class="font-display text-2xl font-bold text-navy-900 mb-6">
+                  Video Lessons
+                </h2>
+                <div class="grid sm:grid-cols-2 gap-6">
+                  <div class="card overflow-hidden">
+                    <div
+                      class="aspect-video bg-navy-800 flex items-center justify-center relative group cursor-pointer"
+                    >
+                      <div
+                        class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"
+                      ></div>
+                      <i
+                        data-lucide="play-circle"
+                        class="w-16 h-16 text-white relative z-10 group-hover:scale-110 transition-transform"
+                      ></i>
+                    </div>
+                    <div class="p-4">
+                      <h3 class="font-bold text-navy-900">
+                        Introduction to Algebra
+                      </h3>
+                      <p class="text-sm text-navy-600">Mathematics - Grade 8</p>
+                    </div>
+                  </div>
+                  <div class="card overflow-hidden">
+                    <div
+                      class="aspect-video bg-navy-800 flex items-center justify-center relative group cursor-pointer"
+                    >
+                      <div
+                        class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"
+                      ></div>
+                      <i
+                        data-lucide="play-circle"
+                        class="w-16 h-16 text-white relative z-10 group-hover:scale-110 transition-transform"
+                      ></i>
+                    </div>
+                    <div class="p-4">
+                      <h3 class="font-bold text-navy-900">
+                        Cell Structure & Function
+                      </h3>
+                      <p class="text-sm text-navy-600">Biology - Grade 10</p>
+                    </div>
+                  </div>
+                  <div class="card overflow-hidden">
+                    <div
+                      class="aspect-video bg-navy-800 flex items-center justify-center relative group cursor-pointer"
+                    >
+                      <div
+                        class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"
+                      ></div>
+                      <i
+                        data-lucide="play-circle"
+                        class="w-16 h-16 text-white relative z-10 group-hover:scale-110 transition-transform"
+                      ></i>
+                    </div>
+                    <div class="p-4">
+                      <h3 class="font-bold text-navy-900">
+                        World War II Overview
+                      </h3>
+                      <p class="text-sm text-navy-600">History - Grade 9</p>
+                    </div>
+                  </div>
+                  <div class="card overflow-hidden">
+                    <div
+                      class="aspect-video bg-navy-800 flex items-center justify-center relative group cursor-pointer"
+                    >
+                      <div
+                        class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"
+                      ></div>
+                      <i
+                        data-lucide="play-circle"
+                        class="w-16 h-16 text-white relative z-10 group-hover:scale-110 transition-transform"
+                      ></i>
+                    </div>
+                    <div class="p-4">
+                      <h3 class="font-bold text-navy-900">
+                        Creative Writing Basics
+                      </h3>
+                      <p class="text-sm text-navy-600">English - Grade 7</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sidebar -->
+              <div class="space-y-6 reveal">
+                <!-- Online Quizzes -->
+                <div class="card p-6">
+                  <h3 class="font-display text-lg font-bold text-navy-900 mb-4">
+                    Online Quizzes
+                  </h3>
+                  <div class="space-y-3">
+                    <div
+                      class="flex items-center justify-between p-3 bg-navy-50 rounded-lg"
+                    >
+                      <span class="text-navy-700">Math Quiz - Algebra</span>
+                      <span
+                        class="text-xs px-2 py-1 bg-green-100 text-green-700 rounded"
+                        >Available</span
+                      >
+                    </div>
+                    <div
+                      class="flex items-center justify-between p-3 bg-navy-50 rounded-lg"
+                    >
+                      <span class="text-navy-700">Science Quiz - Physics</span>
+                      <span
+                        class="text-xs px-2 py-1 bg-gold-100 text-gold-700 rounded"
+                        >Upcoming</span
+                      >
+                    </div>
+                    <div
+                      class="flex items-center justify-between p-3 bg-navy-50 rounded-lg"
+                    >
+                      <span class="text-navy-700">English Grammar</span>
+                      <span
+                        class="text-xs px-2 py-1 bg-green-100 text-green-700 rounded"
+                        >Available</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Download Notes -->
+                <div class="card p-6">
+                  <h3 class="font-display text-lg font-bold text-navy-900 mb-4">
+                    Download Notes
+                  </h3>
+                  <div class="space-y-3">
+                    <div
+                      class="flex items-center gap-3 p-3 bg-navy-50 rounded-lg cursor-pointer hover:bg-navy-100 transition-colors"
+                    >
+                      <i
+                        data-lucide="file-text"
+                        class="w-5 h-5 text-gold-600"
+                      ></i>
+                      <span class="text-navy-700 text-sm"
+                        >Chemistry Notes.pdf</span
+                      >
+                    </div>
+                    <div
+                      class="flex items-center gap-3 p-3 bg-navy-50 rounded-lg cursor-pointer hover:bg-navy-100 transition-colors"
+                    >
+                      <i
+                        data-lucide="file-text"
+                        class="w-5 h-5 text-gold-600"
+                      ></i>
+                      <span class="text-navy-700 text-sm"
+                        >History Timeline.pdf</span
+                      >
+                    </div>
+                    <div
+                      class="flex items-center gap-3 p-3 bg-navy-50 rounded-lg cursor-pointer hover:bg-navy-100 transition-colors"
+                    >
+                      <i
+                        data-lucide="file-text"
+                        class="w-5 h-5 text-gold-600"
+                      ></i>
+                      <span class="text-navy-700 text-sm"
+                        >Grammar Rules.pdf</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Digital Library -->
+                <div
+                  class="card p-6 bg-gradient-to-br from-navy-800 to-navy-900"
+                >
+                  <h3 class="font-display text-lg font-bold text-white mb-2">
+                    Digital Library
+                  </h3>
+                  <p class="text-navy-200 text-sm mb-4">
+                    Access 5000+ e-books and resources
+                  </p>
+                  <button class="btn-gold w-full text-sm">
+                    Explore Library
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY SECTION -->
+      <section id="gallery" class="section">
+        <div class="bg-gradient-to-br from-navy-900 to-navy-800 py-20">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center reveal">
+              <span class="text-gold-400 font-semibold uppercase tracking-wider"
+                >Memories</span
+              >
+              <h1
+                class="font-display text-4xl sm:text-5xl font-bold text-white mt-3"
+              >
+                School Gallery
+              </h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="py-20 bg-cream">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12 reveal">
+              <button class="filter-btn active" onclick="filterGallery('all')">
+                All
+              </button>
+              <button class="filter-btn" onclick="filterGallery('sports')">
+                Sports
+              </button>
+              <button class="filter-btn" onclick="filterGallery('graduation')">
+                Graduation
+              </button>
+              <button class="filter-btn" onclick="filterGallery('cultural')">
+                Cultural Day
+              </button>
+              <button class="filter-btn" onclick="filterGallery('academic')">
+                Academic
+              </button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div
+              class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+              id="galleryGrid"
+            >
+              <!-- Gallery items will be populated by JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEWS SECTION -->
+      <section id="news" class="section">
+        <div class="bg-gradient-to-br from-navy-900 to-navy-800 py-20">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center reveal">
+              <span class="text-gold-400 font-semibold uppercase tracking-wider"
+                >Stay Informed</span
+              >
+              <h1
+                class="font-display text-4xl sm:text-5xl font-bold text-white mt-3"
+              >
+                News & Blog
+              </h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="py-20 bg-cream">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8" id="fullNewsGrid">
+              <!-- Full news grid will be populated by JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EVENTS SECTION -->
+      <section id="events" class="section">
+        <div class="bg-gradient-to-br from-navy-900 to-navy-800 py-20">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center reveal">
+              <span class="text-gold-400 font-semibold uppercase tracking-wider"
+                >Mark Your Calendar</span
+              >
+              <h1
+                class="font-display text-4xl sm:text-5xl font-bold text-white mt-3"
+              >
+                Events & Activities
+              </h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="py-20 bg-cream">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8">
+              <!-- Calendar -->
+              <div class="lg:col-span-2 reveal">
+                <div class="card p-6">
+                  <div class="flex items-center justify-between mb-6">
+                    <h2 class="font-display text-xl font-bold text-navy-900">
+                      December 2024
+                    </h2>
+                    <div class="flex gap-2">
+                      <button
+                        class="p-2 hover:bg-navy-100 rounded-lg transition-colors"
+                      >
+                        <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                      </button>
+                      <button
+                        class="p-2 hover:bg-navy-100 rounded-lg transition-colors"
+                      >
+                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-7 gap-2 mb-4">
+                    <div class="text-center text-sm font-medium text-navy-600">
+                      Sun
+                    </div>
+                    <div class="text-center text-sm font-medium text-navy-600">
+                      Mon
+                    </div>
+                    <div class="text-center text-sm font-medium text-navy-600">
+                      Tue
+                    </div>
+                    <div class="text-center text-sm font-medium text-navy-600">
+                      Wed
+                    </div>
+                    <div class="text-center text-sm font-medium text-navy-600">
+                      Thu
+                    </div>
+                    <div class="text-center text-sm font-medium text-navy-600">
+                      Fri
+                    </div>
+                    <div class="text-center text-sm font-medium text-navy-600">
+                      Sat
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-7 gap-2" id="calendarDays">
+                    <!-- Calendar days populated by JS -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Upcoming Events List -->
+              <div class="reveal">
+                <h2 class="font-display text-xl font-bold text-navy-900 mb-4">
+                  Upcoming Events
+                </h2>
+                <div class="space-y-4" id="eventsList">
+                  <!-- Events list populated by JS -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="section">
+        <div class="bg-gradient-to-br from-navy-900 to-navy-800 py-20">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center reveal">
+              <span class="text-gold-400 font-semibold uppercase tracking-wider"
+                >Get in Touch</span
+              >
+              <h1
+                class="font-display text-4xl sm:text-5xl font-bold text-white mt-3"
+              >
+                Contact Us
+              </h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="py-20 bg-cream">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+              <!-- Contact Form -->
+              <div class="reveal">
+                <h2 class="font-display text-2xl font-bold text-navy-900 mb-6">
+                  Send us a Message
+                </h2>
+                <form class="space-y-6">
+                  <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label class="form-label">Your Name</label>
+                      <input
+                        type="text"
+                        class="form-input"
+                        placeholder="John Doe"
+                      />
+                    </div>
+                    <div>
+                      <label class="form-label">Email Address</label>
+                      <input
+                        type="email"
+                        class="form-input"
+                        placeholder="john@example.com"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label class="form-label">Subject</label>
+                    <input
+                      type="text"
+                      class="form-input"
+                      placeholder="How can we help?"
+                    />
+                  </div>
+                  <div>
+                    <label class="form-label">Message</label>
+                    <textarea
+                      class="form-input"
+                      rows="5"
+                      placeholder="Your message..."
+                    ></textarea>
+                  </div>
+                  <button type="submit" class="btn-primary">
+                    Send Message
+                  </button>
+                </form>
+              </div>
+
+              <!-- Contact Info -->
+              <div class="reveal">
+                <h2 class="font-display text-2xl font-bold text-navy-900 mb-6">
+                  Contact Information
+                </h2>
+                <div class="space-y-6">
+                  <div class="flex items-start gap-4">
+                    <div
+                      class="w-12 h-12 bg-navy-100 rounded-xl flex items-center justify-center flex-shrink-0"
+                    >
+                      <i
+                        data-lucide="map-pin"
+                        class="w-6 h-6 text-navy-700"
+                      ></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-navy-900">Address</h4>
+                      <p class="text-navy-600">
+                        5/9 Kunle Shobajo St, Igbo-oluwo, Ikorodu 104101, Lagos
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div
+                      class="w-12 h-12 bg-navy-100 rounded-xl flex items-center justify-center flex-shrink-0"
+                    >
+                      <i data-lucide="phone" class="w-6 h-6 text-navy-700"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-navy-900">Phone</h4>
+                      <p class="text-navy-600">+234 802 750 8251</p>
+                      <p class="text-navy-600">+234 803 456 7890</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div
+                      class="w-12 h-12 bg-navy-100 rounded-xl flex items-center justify-center flex-shrink-0"
+                    >
+                      <i data-lucide="mail" class="w-6 h-6 text-navy-700"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-navy-900">Email</h4>
+                      <p class="text-navy-600">info@Nifty Stepsacademy.edu</p>
+                      <p class="text-navy-600">admin@niftysteps.com.ng</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div
+                      class="w-12 h-12 bg-navy-100 rounded-xl flex items-center justify-center flex-shrink-0"
+                    >
+                      <i data-lucide="clock" class="w-6 h-6 text-navy-700"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-navy-900">Office Hours</h4>
+                      <p class="text-navy-600">
+                        Monday - Friday: 8:00 AM - 4:00 PM
+                      </p>
+                      <p class="text-navy-600">Saturday: 9:00 AM - 12:00 PM</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Map -->
+                <div
+                  class="mt-8 aspect-video bg-navy-100 rounded-2xl overflow-hidden"
+                >
+                  <div
+                    class="w-full h-full flex items-center justify-center bg-navy-50"
+                  >
+                    <div class="text-center">
+                      <i
+                        data-lucide="map"
+                        class="w-12 h-12 text-navy-300 mx-auto mb-2"
+                      ></i>
+                      <p class="text-navy-500">Google Map Integration</p>
+                      <p class="text-sm text-navy-400">
+                        Insert Google Maps embed code here
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXTRA SECTION -->
+      <section id="extra" class="section">
+        <div class="bg-gradient-to-br from-navy-900 to-navy-800 py-20">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center reveal">
+              <span class="text-gold-400 font-semibold uppercase tracking-wider"
+                >Beyond Academics</span
+              >
+              <h1
+                class="font-display text-4xl sm:text-5xl font-bold text-white mt-3"
+              >
+                Extra Activities
+              </h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="py-20 bg-cream">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- School Bus -->
+            <div class="mb-16 reveal">
+              <h2 class="font-display text-2xl font-bold text-navy-900 mb-6">
+                School Transportation
+              </h2>
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="card p-6">
+                  <i data-lucide="bus" class="w-10 h-10 text-gold-600 mb-4"></i>
+                  <h3 class="font-bold text-navy-900 mb-2">15 Bus Routes</h3>
+                  <p class="text-navy-600 text-sm">
+                    Covering all major areas of the city and suburbs
+                  </p>
+                </div>
+                <div class="card p-6">
+                  <i
+                    data-lucide="shield-check"
+                    class="w-10 h-10 text-gold-600 mb-4"
+                  ></i>
+                  <h3 class="font-bold text-navy-900 mb-2">GPS Tracking</h3>
+                  <p class="text-navy-600 text-sm">
+                    Real-time tracking for parent peace of mind
+                  </p>
+                </div>
+                <div class="card p-6">
+                  <i
+                    data-lucide="users"
+                    class="w-10 h-10 text-gold-600 mb-4"
+                  ></i>
+                  <h3 class="font-bold text-navy-900 mb-2">Trained Staff</h3>
+                  <p class="text-navy-600 text-sm">
+                    Experienced drivers and attendants on every bus
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sports Programs -->
+            <div class="mb-16 reveal">
+              <h2 class="font-display text-2xl font-bold text-navy-900 mb-6">
+                Sports Programs
+              </h2>
+              <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card p-6 text-center">
+                  <div
+                    class="w-16 h-16 mx-auto bg-green-100 rounded-2xl flex items-center justify-center mb-4"
+                  >
+                    <i data-lucide="circle" class="w-8 h-8 text-green-600"></i>
+                  </div>
+                  <h3 class="font-bold text-navy-900">Football</h3>
+                </div>
+                <div class="card p-6 text-center">
+                  <div
+                    class="w-16 h-16 mx-auto bg-orange-100 rounded-2xl flex items-center justify-center mb-4"
+                  >
+                    <i data-lucide="circle" class="w-8 h-8 text-orange-600"></i>
+                  </div>
+                  <h3 class="font-bold text-navy-900">Basketball</h3>
+                </div>
+                <div class="card p-6 text-center">
+                  <div
+                    class="w-16 h-16 mx-auto bg-blue-100 rounded-2xl flex items-center justify-center mb-4"
+                  >
+                    <i data-lucide="waves" class="w-8 h-8 text-blue-600"></i>
+                  </div>
+                  <h3 class="font-bold text-navy-900">Swimming</h3>
+                </div>
+                <div class="card p-6 text-center">
+                  <div
+                    class="w-16 h-16 mx-auto bg-yellow-100 rounded-2xl flex items-center justify-center mb-4"
+                  >
+                    <i data-lucide="trophy" class="w-8 h-8 text-yellow-600"></i>
+                  </div>
+                  <h3 class="font-bold text-navy-900">Athletics</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- Clubs & Societies -->
+            <div class="mb-16 reveal">
+              <h2 class="font-display text-2xl font-bold text-navy-900 mb-6">
+                Clubs & Societies
+              </h2>
+              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="card p-4 flex items-center gap-3">
+                  <i data-lucide="pen-tool" class="w-5 h-5 text-gold-600"></i>
+                  <span class="text-navy-900 font-medium">Debate Club</span>
+                </div>
+                <div class="card p-4 flex items-center gap-3">
+                  <i data-lucide="music" class="w-5 h-5 text-gold-600"></i>
+                  <span class="text-navy-900 font-medium">Music Society</span>
+                </div>
+                <div class="card p-4 flex items-center gap-3">
+                  <i data-lucide="code" class="w-5 h-5 text-gold-600"></i>
+                  <span class="text-navy-900 font-medium">Coding Club</span>
+                </div>
+                <div class="card p-4 flex items-center gap-3">
+                  <i data-lucide="camera" class="w-5 h-5 text-gold-600"></i>
+                  <span class="text-navy-900 font-medium"
+                    >Photography Club</span
+                  >
+                </div>
+                <div class="card p-4 flex items-center gap-3">
+                  <i data-lucide="book-open" class="w-5 h-5 text-gold-600"></i>
+                  <span class="text-navy-900 font-medium">Book Club</span>
+                </div>
+                <div class="card p-4 flex items-center gap-3">
+                  <i data-lucide="leaf" class="w-5 h-5 text-gold-600"></i>
+                  <span class="text-navy-900 font-medium"
+                    >Environment Club</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Alumni -->
+            <div class="reveal">
+              <h2 class="font-display text-2xl font-bold text-navy-900 mb-6">
+                Notable Alumni
+              </h2>
+              <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card p-6 text-center">
+                  <!-- REPLACED: Alumni Image -->
+                  <div
+                    class="w-20 h-20 mx-auto bg-navy-100 rounded-full flex items-center justify-center mb-4 overflow-hidden"
+                  >
+                    <img
+                      src="path/to/alumni-1.jpg"
+                      alt="Dr. Alex Johnson"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 class="font-bold text-navy-900">Dr. Alex Johnson</h3>
+                  <p class="text-sm text-gold-600">Class of 2005</p>
+                  <p class="text-sm text-navy-600 mt-1">Renowned Surgeon</p>
+                </div>
+                <div class="card p-6 text-center">
+                  <div
+                    class="w-20 h-20 mx-auto bg-navy-100 rounded-full flex items-center justify-center mb-4 overflow-hidden"
+                  >
+                    <img
+                      src="path/to/alumni-1.jpg"
+                      alt="Dr. Alex Johnson"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 class="font-bold text-navy-900">Sarah Williams</h3>
+                  <p class="text-sm text-gold-600">Class of 2010</p>
+                  <p class="text-sm text-navy-600 mt-1">Tech CEO</p>
+                </div>
+                <div class="card p-6 text-center">
+                  <div
+                    class="w-20 h-20 mx-auto bg-navy-100 rounded-full flex items-center justify-center mb-4 overflow-hidden"
+                  >
+                    <img
+                      src="path/to/alumni-1.jpg"
+                      alt="Dr. Alex Johnson"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 class="font-bold text-navy-900">Michael Chen</h3>
+                  <p class="text-sm text-gold-600">Class of 2008</p>
+                  <p class="text-sm text-navy-600 mt-1">Olympic Athlete</p>
+                </div>
+                <div class="card p-6 text-center">
+                  <div
+                    class="w-20 h-20 mx-auto bg-navy-100 rounded-full flex items-center justify-center mb-4 overflow-hidden"
+                  >
+                    <img
+                      src="path/to/alumni-1.jpg"
+                      alt="Dr. Alex Johnson"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 class="font-bold text-navy-900">Lisa Anderson</h3>
+                  <p class="text-sm text-gold-600">Class of 2012</p>
+                  <p class="text-sm text-navy-600 mt-1">Award-winning Author</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl flex items-center justify-center overflow-hidden p-1"
+              >
+                <img
+                  src="https://z-cdn-media.chatglm.cn/files/c22c7e47-c4fb-4912-b04b-18e785b6b60d.png?auth_key=1872902018-a70119b2d200494ba28e7c68c4296c9d-0-3acdf289ba48628b5547dfd24f145aa9"
+                  alt="Nifty Steps Logo"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div>
+                <span class="font-display text-xl font-bold"
+                  >Nifty Steps School</span
+                >
+                <span class="block text-xs text-navy-300"
+                  >Crescat Scientia; Vita Excolatur</span
+                >
+              </div>
+            </div>
+            <p class="text-navy-300 text-sm">
+              Nurturing minds and building futures since 2008. A premier
+              educational institution committed to academic excellence.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-navy-300">
+              <li>
+                <button
+                  onclick="showSection('about')"
+                  class="hover:text-gold-400 transition-colors"
+                >
+                  About Us
+                </button>
+              </li>
+              <li>
+                <button
+                  onclick="showSection('academics')"
+                  class="hover:text-gold-400 transition-colors"
+                >
+                  Academics
+                </button>
+              </li>
+              <li>
+                <button
+                  onclick="showSection('admission')"
+                  class="hover:text-gold-400 transition-colors"
+                >
+                  Admissions
+                </button>
+              </li>
+              <li>
+                <button
+                  onclick="showSection('contact')"
+                  class="hover:text-gold-400 transition-colors"
+                >
+                  Contact
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">Resources</h4>
+            <ul class="space-y-2 text-navy-300">
+              <li>
+                <button
+                  onclick="showSection('elearning')"
+                  class="hover:text-gold-400 transition-colors"
+                >
+                  E-Learning
+                </button>
+              </li>
+              <li>
+                <button
+                  onclick="showSection('portals')"
+                  class="hover:text-gold-400 transition-colors"
+                >
+                  Student Portal
+                </button>
+              </li>
+              <li>
+                <button
+                  onclick="showSection('gallery')"
+                  class="hover:text-gold-400 transition-colors"
+                >
+                  Gallery
+                </button>
+              </li>
+              <li>
+                <button
+                  onclick="showSection('news')"
+                  class="hover:text-gold-400 transition-colors"
+                >
+                  News
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">Connect With Us</h4>
+            <div class="flex gap-4 mb-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-navy-800 rounded-lg flex items-center justify-center hover:bg-gold-500 transition-colors"
+                aria-label="Facebook"
+              >
+                <i data-lucide="facebook" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-navy-800 rounded-lg flex items-center justify-center hover:bg-gold-500 transition-colors"
+                aria-label="Twitter"
+              >
+                <i data-lucide="twitter" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-navy-800 rounded-lg flex items-center justify-center hover:bg-gold-500 transition-colors"
+                aria-label="Instagram"
+              >
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-navy-800 rounded-lg flex items-center justify-center hover:bg-gold-500 transition-colors"
+                aria-label="YouTube"
+              >
+                <i data-lucide="youtube" class="w-5 h-5"></i>
+              </a>
+            </div>
+            <p class="text-navy-300 text-sm">Download our mobile app</p>
+            <div class="flex gap-2 mt-2">
+              <div
+                class="px-3 py-2 bg-navy-800 rounded-lg text-xs flex items-center gap-2"
+              >
+                <i data-lucide="smartphone" class="w-4 h-4"></i>
+                App Store
+              </div>
+              <div
+                class="px-3 py-2 bg-navy-800 rounded-lg text-xs flex items-center gap-2"
+              >
+                <i data-lucide="smartphone" class="w-4 h-4"></i>
+                Play Store
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-navy-800 pt-8 flex flex-wrap justify-between items-center gap-4"
+        >
+          <p class="text-navy-400 text-sm">
+            2024 Nifty Steps School. All rights reserved.
+          </p>
+          <div class="flex gap-6 text-navy-400 text-sm">
+            <a href="#" class="hover:text-gold-400 transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-gold-400 transition-colors"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Portal Modal -->
+    <div id="portalModal" class="modal">
+      <div class="modal-content max-w-md">
+        <div
+          class="p-6 border-b border-navy-100 flex justify-between items-center"
+        >
+          <h3 class="font-display text-xl font-bold text-navy-900">
+            Quick Portal Access
+          </h3>
+          <button
+            onclick="closeModal('portalModal')"
+            class="p-2 hover:bg-navy-50 rounded-lg"
+            aria-label="Close modal"
+          >
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+        <div class="p-6 space-y-4">
+          <button
+            onclick="
+              showSection('portals');
+              switchPortalTab('student');
+              closeModal('portalModal');
+            "
+            class="w-full card p-4 flex items-center gap-4 text-left hover:border-gold-500"
+          >
+            <div
+              class="w-12 h-12 bg-navy-100 rounded-xl flex items-center justify-center"
+            >
+              <i data-lucide="graduation-cap" class="w-6 h-6 text-navy-700"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-navy-900">Student Portal</h4>
+              <p class="text-sm text-navy-600">Access your dashboard</p>
+            </div>
+          </button>
+          <button
+            onclick="
+              showSection('portals');
+              switchPortalTab('teacher');
+              closeModal('portalModal');
+            "
+            class="w-full card p-4 flex items-center gap-4 text-left hover:border-gold-500"
+          >
+            <div
+              class="w-12 h-12 bg-gold-100 rounded-xl flex items-center justify-center"
+            >
+              <i data-lucide="briefcase" class="w-6 h-6 text-gold-600"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-navy-900">Teacher Portal</h4>
+              <p class="text-sm text-navy-600">Manage your classes</p>
+            </div>
+          </button>
+          <button
+            onclick="
+              showSection('portals');
+              switchPortalTab('parent');
+              closeModal('portalModal');
+            "
+            class="w-full card p-4 flex items-center gap-4 text-left hover:border-gold-500"
+          >
+            <div
+              class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center"
+            >
+              <i data-lucide="users" class="w-6 h-6 text-green-600"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-navy-900">Parent Portal</h4>
+              <p class="text-sm text-navy-600">Track your child's progress</p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Student Dashboard Modal -->
+    <div id="studentDashboardModal" class="modal">
+      <div class="modal-content max-w-2xl">
+        <div
+          class="p-6 border-b border-navy-100 flex justify-between items-center"
+        >
+          <div>
+            <h3 class="font-display text-xl font-bold text-navy-900">
+              Student Dashboard
+            </h3>
+            <p class="text-sm text-navy-600">Welcome back, John Smith</p>
+          </div>
+          <button
+            onclick="closeModal('studentDashboardModal')"
+            class="p-2 hover:bg-navy-50 rounded-lg"
+            aria-label="Close modal"
+          >
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+        <div class="p-6">
+          <div class="grid sm:grid-cols-2 gap-4 mb-6">
+            <div class="card p-4">
+              <div class="flex items-center gap-3 mb-2">
+                <i data-lucide="award" class="w-5 h-5 text-gold-600"></i>
+                <span class="font-medium text-navy-900">Latest Results</span>
+              </div>
+              <div class="text-2xl font-bold text-navy-900">85.6%</div>
+              <p class="text-sm text-green-600">+3.2% from last term</p>
+            </div>
+            <div class="card p-4">
+              <div class="flex items-center gap-3 mb-2">
+                <i data-lucide="calendar" class="w-5 h-5 text-gold-600"></i>
+                <span class="font-medium text-navy-900">Attendance</span>
+              </div>
+              <div class="text-2xl font-bold text-navy-900">96%</div>
+              <p class="text-sm text-navy-600">This semester</p>
+            </div>
+          </div>
+
+          <!-- Timetable -->
+          <h4 class="font-bold text-navy-900 mb-3">Today's Timetable</h4>
+          <div class="space-y-2 mb-6">
+            <div
+              class="flex items-center justify-between p-3 bg-navy-50 rounded-lg"
+            >
+              <div>
+                <span class="font-medium text-navy-900">Mathematics</span>
+                <span class="text-sm text-navy-600 block"
+                  >8:00 AM - 9:00 AM</span
+                >
+              </div>
+              <span
+                class="text-xs px-2 py-1 bg-green-100 text-green-700 rounded"
+                >Completed</span
+              >
+            </div>
+            <div
+              class="flex items-center justify-between p-3 bg-gold-50 rounded-lg border border-gold-200"
+            >
+              <div>
+                <span class="font-medium text-navy-900">Physics</span>
+                <span class="text-sm text-navy-600 block"
+                  >9:15 AM - 10:15 AM</span
+                >
+              </div>
+              <span class="text-xs px-2 py-1 bg-gold-200 text-gold-800 rounded"
+                >Current</span
+              >
+            </div>
+            <div
+              class="flex items-center justify-between p-3 bg-navy-50 rounded-lg"
+            >
+              <div>
+                <span class="font-medium text-navy-900">English</span>
+                <span class="text-sm text-navy-600 block"
+                  >10:30 AM - 11:30 AM</span
+                >
+              </div>
+              <span class="text-xs px-2 py-1 bg-navy-100 text-navy-700 rounded"
+                >Upcoming</span
+              >
+            </div>
+          </div>
+
+          <!-- Pending Assignments -->
+          <h4 class="font-bold text-navy-900 mb-3">Pending Assignments</h4>
+          <div class="space-y-2">
+            <div
+              class="flex items-center justify-between p-3 bg-red-50 rounded-lg border border-red-200"
+            >
+              <div>
+                <span class="font-medium text-navy-900"
+                  >Chemistry Lab Report</span
+                >
+                <span class="text-sm text-red-600 block">Due: Tomorrow</span>
+              </div>
+              <button class="text-sm text-gold-600 hover:underline">
+                Submit
+              </button>
+            </div>
+            <div
+              class="flex items-center justify-between p-3 bg-navy-50 rounded-lg"
+            >
+              <div>
+                <span class="font-medium text-navy-900">History Essay</span>
+                <span class="text-sm text-navy-600 block">Due: Dec 20</span>
+              </div>
+              <button class="text-sm text-gold-600 hover:underline">
+                Submit
+              </button>
+            </div>
+          </div>
+
+          <!-- Fee Status -->
+          <div class="mt-6 p-4 bg-green-50 rounded-xl border border-green-200">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <i
+                  data-lucide="check-circle"
+                  class="w-6 h-6 text-green-600"
+                ></i>
+                <div>
+                  <span class="font-medium text-navy-900">Fee Status</span>
+                  <span class="text-sm text-green-600 block"
+                    >All payments up to date</span
+                  >
+                </div>
+              </div>
+              <button class="text-sm text-gold-600 hover:underline">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Chatbot -->
+    <div
+      class="chatbot-btn"
+      onclick="toggleChatbot()"
+      aria-label="Open AI assistant"
+    >
+      <i data-lucide="message-circle" class="w-7 h-7 text-navy-900"></i>
+    </div>
+
+    <div id="chatbotWindow" class="chatbot-window">
+      <div
+        class="p-4 bg-gradient-to-r from-navy-800 to-navy-900 text-white flex justify-between items-center"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center"
+          >
+            <i data-lucide="bot" class="w-5 h-5 text-navy-900"></i>
+          </div>
+          <div>
+            <h4 class="font-bold">Nifty Steps Assistant</h4>
+            <span class="text-xs text-navy-200">Always here to help</span>
+          </div>
+        </div>
+        <button
+          onclick="toggleChatbot()"
+          class="p-2 hover:bg-navy-700 rounded-lg"
+          aria-label="Close chat"
+        >
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div class="flex-1 p-4 overflow-y-auto" id="chatMessages">
+        <div class="flex gap-3 mb-4">
+          <div
+            class="w-8 h-8 bg-gold-500 rounded-full flex items-center justify-center flex-shrink-0"
+          >
+            <i data-lucide="bot" class="w-4 h-4 text-navy-900"></i>
+          </div>
+          <div class="bg-navy-100 rounded-2xl rounded-tl-none p-3 max-w-xs">
+            <p class="text-sm text-navy-900">
+              Hello! I'm your Nifty Steps School assistant. How can I help you
+              today?
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="p-4 border-t border-navy-100">
+        <div class="flex gap-2">
+          <input
+            type="text"
+            id="chatInput"
+            class="form-input flex-1"
+            placeholder="Type your message..."
+            onkeypress="handleChatKeypress(event)"
+          />
+          <button onclick="sendChatMessage()" class="btn-primary px-4">
+            <i data-lucide="send" class="w-5 h-5"></i>
+          </button>
+        </div>
+        <div class="flex flex-wrap gap-2 mt-3">
+          <button
+            onclick="quickChat('Admission info')"
+            class="text-xs px-3 py-1 bg-navy-100 rounded-full hover:bg-navy-200 transition-colors"
+          >
+            Admission info
+          </button>
+          <button
+            onclick="quickChat('School fees')"
+            class="text-xs px-3 py-1 bg-navy-100 rounded-full hover:bg-navy-200 transition-colors"
+          >
+            School fees
+          </button>
+          <button
+            onclick="quickChat('Contact details')"
+            class="text-xs px-3 py-1 bg-navy-100 rounded-full hover:bg-navy-200 transition-colors"
+          >
+            Contact details
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Use the same URL as in your index.html
+      const GAS_URL =
+        "https://script.google.com/macros/s/AKfycbzTt8Fnpua38ZnPkj0NcHPCzxVOXJjuju6Kt6mM929MS8pGL325-5o2SeArNtH3PKgV/exec";
+
+      async function handleTeacherLogin(e) {
+        e.preventDefault();
+        const firstName = document.getElementById("teacherFirstName").value;
+        const lastName = document.getElementById("teacherLastName").value;
+        const password = document.getElementById("teacherPassword").value;
+
+        // Construct name as "FirstName LastName"
+        const name = `${firstName} ${lastName}`;
+
+        try {
+          const response = await fetch(GAS_URL, {
+            method: "POST",
+            body: JSON.stringify({
+              action: "login",
+              name: name,
+              password: password,
+            }),
+          });
+          const result = await response.json();
+
+          if (result.status === "success" && result.user) {
+            if (result.user.disabled) {
+              alert("Your account has been disabled.");
+              return;
+            }
+            // Save user to session storage so index.html detects it
+            sessionStorage.setItem("currentUser", JSON.stringify(result.user));
+            // Redirect to the portal
+            window.location.href = "index.html";
+          } else {
+            alert(result.message || "Invalid Name or Password.");
+          }
+        } catch (error) {
+          console.error("Login Error:", error);
+          alert("Could not connect to the server.");
+        }
+      }
+    </script>
+
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+
+      // Data
+      const newsData = [
+        {
+          id: 1,
+          title: "BEST-GRADUATING-STUDENT",
+          excerpt:
+            "Miss Moyinoluwa Atolagbe, as she received a commendation letter and cash award from the Director, Dr. Oladeji Egwaoje.",
+          date: "October 19, 2023",
+          category: "Academic",
+          image: "science",
+        },
+        {
+          id: 2,
+          title: "UP CLOSE WITH PROFESSOR WOLE SOYINKA",
+          excerpt:
+            "Some Literature students in the Senior High School section of Nifty Steps College were with the renowned literary icon and Nobel Laureate, Professor Wole Soyinka.",
+          date: "September 2, 2023",
+          category: "Facility",
+          image: "lab",
+        },
+        {
+          id: 3,
+          title: "Sports Day Championship Results",
+          excerpt:
+            "Congratulations to all participants and winners of our annual sports day championship held last weekend.",
+          date: "Dec 5, 2024",
+          category: "Sports",
+          image: "sports",
+        },
+        {
+          id: 4,
+          title: "Cultural Festival Highlights",
+          excerpt:
+            "Our recent cultural festival was a vibrant celebration of diversity, featuring performances, food stalls, and art from around the world.",
+          date: "Dec 3, 2024",
+          category: "Cultural",
+          image: "meeting",
+        },
+        {
+          id: 5,
+          title: "Secondary School Debate Hour",
+          excerpt:
+            "The Secondary School Debate Hour was a resounding success, with students showcasing their critical thinking and public speaking skills on various topics.",
+          date: "Dec 1, 2024",
+          category: "Event",
+          image: "Debate",
+        },
+        {
+          id: 6,
+          title: "Excursion to the International Airport",
+          excerpt:
+            "Our Primary School students had an exciting excursion to the International Airport, where they learned about aviation and airport operations.",
+          date: "Nov 28, 2024",
+          category: "Academic",
+          image: "scholarship",
+        },
+      ];
+
+      const eventsData = [
+        {
+          id: 1,
+          title: "Winter Break Begins",
+          date: "Dec 20",
+          time: "All Day",
+          type: "holiday",
+        },
+        {
+          id: 2,
+          title: "Parent-Teacher Meeting",
+          date: "Dec 15",
+          time: "9:00 AM - 4:00 PM",
+          type: "meeting",
+        },
+        {
+          id: 3,
+          title: "Winter Concert",
+          date: "Dec 18",
+          time: "6:00 PM",
+          type: "event",
+        },
+        {
+          id: 4,
+          title: "End of Term Exams",
+          date: "Dec 10-14",
+          time: "Various",
+          type: "exam",
+        },
+        {
+          id: 5,
+          title: "Science Fair",
+          date: "Dec 8",
+          time: "10:00 AM - 3:00 PM",
+          type: "event",
+        },
+        {
+          id: 6,
+          title: "School Resumes",
+          date: "Jan 6",
+          time: "8:00 AM",
+          type: "academic",
+        },
+        {
+          id: 7,
+          title: "Sports Day",
+          date: "Jan 15",
+          time: "9:00 AM",
+          type: "sports",
+        },
+        {
+          id: 8,
+          title: "Career Day",
+          date: "Jan 20",
+          time: "10:00 AM",
+          type: "event",
+        },
+      ];
+
+      const galleryData = [
+        { id: 1, category: "sports", title: "Football Championship" },
+        { id: 2, category: "graduation", title: "Class of 2024" },
+        { id: 3, category: "cultural", title: "Cultural Day Celebration" },
+        { id: 4, category: "academic", title: "Science Fair Projects" },
+        { id: 5, category: "sports", title: "Athletics Meet" },
+        { id: 6, category: "cultural", title: "Music Festival" },
+        { id: 7, category: "graduation", title: "Graduation Ceremony" },
+        { id: 8, category: "academic", title: "Library Activities" },
+        { id: 9, category: "sports", title: "Basketball Tournament" },
+        { id: 10, category: "cultural", title: "Art Exhibition" },
+        { id: 11, category: "academic", title: "Robotics Club" },
+        { id: 12, category: "graduation", title: "Award Ceremony" },
+      ];
+
+      // Functions
+      function showSection(sectionId) {
+        // Hide all sections
+        document.querySelectorAll(".section").forEach((section) => {
+          section.classList.remove("active");
+        });
+
+        // Show target section
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+          targetSection.classList.add("active");
+
+          // Scroll to top
+          window.scrollTo({ top: 0, behavior: "smooth" });
+
+          // Update nav links
+          document.querySelectorAll(".nav-link").forEach((link) => {
+            link.classList.remove("active");
+            if (link.dataset.section === sectionId) {
+              link.classList.add("active");
+            }
+          });
+
+          // Trigger reveal animations
+          setTimeout(() => {
+            initRevealAnimations();
+          }, 100);
+        }
+      }
+
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("active");
+      }
+
+      function openModal(modalId) {
+        document.getElementById(modalId).classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal(modalId) {
+        document.getElementById(modalId).classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      function switchPortalTab(tab) {
+        // Update tabs
+        document
+          .querySelectorAll(".portal-tab")
+          .forEach((t) => t.classList.remove("active"));
+        event.target.classList.add("active");
+
+        // Show/hide portals
+        document
+          .querySelectorAll(".portal-content")
+          .forEach((p) => p.classList.add("hidden"));
+        document.getElementById(tab + "Portal").classList.remove("hidden");
+      }
+
+      function showStudentDashboard() {
+        closeModal("portalModal");
+        openModal("studentDashboardModal");
+      }
+
+      function toggleChatbot() {
+        document.getElementById("chatbotWindow").classList.toggle("active");
+      }
+
+      function sendChatMessage() {
+        const input = document.getElementById("chatInput");
+        const message = input.value.trim();
+        if (!message) return;
+
+        addChatMessage(message, "user");
+        input.value = "";
+
+        // Simulate bot response
+        setTimeout(() => {
+          const responses = {
+            admission:
+              "Admissions for 2025-2026 are now open! You can apply online through our Admission section. The deadline is January 31st, 2025.",
+            fee: "Our fee structure varies by grade: Primary ($3,500/year), Middle ($4,500/year), and High School ($5,500/year). Payment plans are available.",
+            contact:
+              "You can reach us at info@Nifty Stepsacademy.edu or call +1 (234) 567-8900. Our office is open Mon-Fri, 8AM-4PM.",
+            default:
+              "Thank you for your message! I'd be happy to help. You can also contact our admissions team directly at admissions@Nifty Stepsacademy.edu for specific questions.",
+          };
+
+          let response = responses.default;
+          const lowerMsg = message.toLowerCase();
+          if (lowerMsg.includes("admission") || lowerMsg.includes("apply"))
+            response = responses.admission;
+          else if (
+            lowerMsg.includes("fee") ||
+            lowerMsg.includes("cost") ||
+            lowerMsg.includes("payment")
+          )
+            response = responses.fee;
+          else if (
+            lowerMsg.includes("contact") ||
+            lowerMsg.includes("phone") ||
+            lowerMsg.includes("email")
+          )
+            response = responses.contact;
+
+          addChatMessage(response, "bot");
+        }, 1000);
+      }
+
+      function quickChat(message) {
+        document.getElementById("chatInput").value = message;
+        sendChatMessage();
+      }
+
+      function addChatMessage(message, sender) {
+        const container = document.getElementById("chatMessages");
+        const div = document.createElement("div");
+        div.className =
+          "flex gap-3 mb-4" + (sender === "user" ? " flex-row-reverse" : "");
+
+        if (sender === "bot") {
+          div.innerHTML = `
+                    <div class="w-8 h-8 bg-gold-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="bot" class="w-4 h-4 text-navy-900"></i>
+                    </div>
+                    <div class="bg-navy-100 rounded-2xl rounded-tl-none p-3 max-w-xs">
+                        <p class="text-sm text-navy-900">${message}</p>
+                    </div>
+                `;
+        } else {
+          div.innerHTML = `
+                    <div class="w-8 h-8 bg-navy-700 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="user" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <div class="bg-gold-100 rounded-2xl rounded-tr-none p-3 max-w-xs">
+                        <p class="text-sm text-navy-900">${message}</p>
+                    </div>
+                `;
+        }
+
+        container.appendChild(div);
+        container.scrollTop = container.scrollHeight;
+        lucide.createIcons();
+      }
+
+      function handleChatKeypress(e) {
+        if (e.key === "Enter") sendChatMessage();
+      }
+
+      function filterGallery(category) {
+        // Update filter buttons
+        document.querySelectorAll(".filter-btn").forEach((btn) => {
+          btn.classList.remove("active");
+          if (
+            btn.textContent.toLowerCase().includes(category) ||
+            (category === "all" && btn.textContent === "All")
+          ) {
+            btn.classList.add("active");
+          }
+        });
+
+        // Filter gallery items
+        const grid = document.getElementById("galleryGrid");
+        const items = grid.querySelectorAll(".gallery-item");
+
+        items.forEach((item) => {
+          if (category === "all" || item.dataset.category === category) {
+            item.style.display = "block";
+            item.style.animation = "fadeIn 0.5s ease forwards";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      }
+
+      function renderNews() {
+        const grid = document.getElementById("newsGrid");
+        if (!grid) return;
+
+        // Only show first 3 for homepage
+        const items = newsData.slice(0, 3);
+
+        grid.innerHTML = items
+          .map(
+            (news, index) => `
+        <div class="card overflow-hidden reveal stagger-${index + 1}">
+            <div class="aspect-video bg-navy-200 overflow-hidden">
+                <!-- REPLACED: News Image -->
+                <img src="img/news-${news.id}.jpg" alt="${news.title}" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+                <span class="text-xs font-medium text-gold-600 uppercase">${news.category}</span>
+                <h3 class="font-display text-lg font-bold text-navy-900 mt-2 mb-3">${news.title}</h3>
+                <p class="text-navy-600 text-sm mb-4">${news.excerpt}</p>
+                <div class="flex items-center text-sm text-navy-500">
+                    <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                    ${news.date}
+                </div>
+            </div>
+        </div>
+    `,
+          )
+          .join("");
+
+        lucide.createIcons();
+      }
+
+      function renderFullNews() {
+        const grid = document.getElementById("fullNewsGrid");
+        if (!grid) return;
+
+        grid.innerHTML = newsData
+          .map(
+            (news, index) => `
+        <div class="card overflow-hidden reveal stagger-${(index % 3) + 1}">
+            <div class="aspect-video bg-navy-200 overflow-hidden">
+                 <!-- REPLACED: News Image -->
+                <img src="img/news-${news.id}.jpg" alt="${news.title}" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+                <span class="text-xs font-medium text-gold-600 uppercase">${news.category}</span>
+                <h3 class="font-display text-lg font-bold text-navy-900 mt-2 mb-3">${news.title}</h3>
+                <p class="text-navy-600 text-sm mb-4">${news.excerpt}</p>
+                <div class="flex items-center text-sm text-navy-500">
+                    <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                    ${news.date}
+                </div>
+            </div>
+        </div>
+    `,
+          )
+          .join("");
+
+        lucide.createIcons();
+      }
+
+      function renderGallery() {
+        const grid = document.getElementById("galleryGrid");
+        if (!grid) return;
+
+        grid.innerHTML = galleryData
+          .map(
+            (item, index) => `
+        <div class="gallery-item aspect-square rounded-xl overflow-hidden relative group cursor-pointer reveal stagger-${(index % 4) + 1}" data-category="${item.category}">
+            <!-- REPLACED: Gallery Image -->
+            <img src="img/gallery-${item.id}.jpg" alt="${item.title}" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                <span class="text-white font-medium">${item.title}</span>
+            </div>
+        </div>
+    `,
+          )
+          .join("");
+
+        lucide.createIcons();
+      }
+
+      function renderEvents() {
+        const grid = document.getElementById("eventsGrid");
+        if (!grid) return;
+
+        const eventIcons = {
+          holiday: "sun",
+          meeting: "users",
+          event: "calendar",
+          exam: "file-text",
+          academic: "book-open",
+          sports: "trophy",
+        };
+
+        // Show first 4 events
+        const items = eventsData.slice(0, 4);
+
+        grid.innerHTML = items
+          .map(
+            (event, index) => `
+                <div class="bg-navy-800 rounded-2xl p-6 reveal border border-navy-700 hover:border-gold-500 transition-colors stagger-${index + 1}">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gold-500/20 rounded-xl flex items-center justify-center">
+                            <i data-lucide="${eventIcons[event.type] || "calendar"}" class="w-6 h-6 text-gold-400"></i>
+                        </div>
+                        <div>
+                            <span class="text-gold-400 text-sm font-medium">${event.date}</span>
+                            <h3 class="font-bold text-white">${event.title}</h3>
+                        </div>
+                    </div>
+                    <div class="flex items-center text-navy-300 text-sm">
+                        <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
+                        ${event.time}
+                    </div>
+                </div>
+            `,
+          )
+          .join("");
+
+        lucide.createIcons();
+      }
+
+      function renderEventsList() {
+        const list = document.getElementById("eventsList");
+        if (!list) return;
+
+        list.innerHTML = eventsData
+          .map(
+            (event) => `
+                <div class="card p-4">
+                    <div class="flex gap-4">
+                        <div class="text-center bg-gold-100 rounded-xl px-3 py-2 flex-shrink-0">
+                            <span class="block text-xs text-gold-700 font-bold">${event.date.split(" ")[0].toUpperCase()}</span>
+                            <span class="block text-lg font-bold text-navy-900">${event.date.split(" ")[1] || ""}</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-navy-900">${event.title}</h4>
+                            <p class="text-sm text-navy-600">${event.time}</p>
+                        </div>
+                    </div>
+                </div>
+            `,
+          )
+          .join("");
+      }
+
+      function renderCalendar() {
+        const grid = document.getElementById("calendarDays");
+        if (!grid) return;
+
+        // Extract event days from eventsData (assuming Dec 2024)
+        const eventDays = eventsData
+          .map((e) => {
+            const parts = e.date.split(" ");
+            // Simple check for "Dec 10" format
+            if (parts[0] === "Dec") {
+              return parseInt(parts[1]);
+            }
+            return 0;
+          })
+          .filter((d) => !isNaN(d) && d > 0);
+
+        // December 2024 starts on Sunday (index 0)
+        const startDay = 0;
+        const daysInMonth = 31;
+        const today = 12; // Simulating today's date
+
+        let html = "";
+
+        // Empty cells for start day
+        for (let i = 0; i < startDay; i++) {
+          html += '<div class="calendar-day text-navy-300"></div>';
+        }
+
+        // Days
+        for (let i = 1; i <= daysInMonth; i++) {
+          const hasEvent = eventDays.includes(i);
+          const isToday = i === today;
+          const classes = `calendar-day ${hasEvent ? "has-event" : ""} ${isToday ? "today" : ""}`;
+          html += `<div class="${classes}">${i}</div>`;
+        }
+
+        grid.innerHTML = html;
+      }
+
+      function initRevealAnimations() {
+        const reveals = document.querySelectorAll(".reveal:not(.active)");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                entry.target.style.animation = "fadeInUp 0.8s ease forwards";
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+
+        reveals.forEach((el) => observer.observe(el));
+      }
+
+      function animateCounters() {
+        const counters = document.querySelectorAll("[data-count]");
+
+        counters.forEach((counter) => {
+          const target = parseInt(counter.dataset.count);
+          const duration = 2000;
+          const step = target / (duration / 16);
+          let current = 0;
+
+          const updateCounter = () => {
+            current += step;
+            if (current < target) {
+              counter.textContent = Math.floor(current);
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.textContent = target;
+            }
+          };
+
+          // Start animation when in view
+          const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+              updateCounter();
+              observer.disconnect();
+            }
+          });
+
+          observer.observe(counter);
+        });
+      }
+
+      // Initialize on load
+      document.addEventListener("DOMContentLoaded", () => {
+        renderNews();
+        renderEvents();
+        renderGallery();
+        renderFullNews();
+        renderEventsList();
+        renderCalendar();
+        animateCounters();
+        initRevealAnimations();
+      });
+
+      // Form submission handler
+      document
+        .getElementById("admissionForm")
+        ?.addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert(
+            "Application submitted successfully! We will contact you via email.",
+          );
+          this.reset();
+        });
+    </script>
+  </body>
+</html>
